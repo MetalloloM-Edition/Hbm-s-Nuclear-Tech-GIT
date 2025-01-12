@@ -24,7 +24,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '2.0.3-dev'
+version = '2.0.3-dev_M-v1.1.6'
 group = 'com.hbm' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'NTM-Extended-1.12.2'
 
@@ -139,6 +139,7 @@ compileJava.dependsOn generateItemModels
 compileJava.dependsOn generateObjBlockFiles
 compileJava.dependsOn generateBlockFiles
 
+
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   Snapshot are built nightly.
@@ -187,10 +188,6 @@ repositories {
     maven { // CraftTweaker
         name = "jared maven"
         url = "http://maven.blamejared.com/"
-    }
-    maven { //GC
-        name = "galacticraft"
-        url = "https://maven.galacticraft.net/repository/legacy/"
     }
     maven {
         name = 'CoFH Maven'
