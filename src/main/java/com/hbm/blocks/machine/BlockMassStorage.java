@@ -19,8 +19,10 @@ import com.hbm.tileentity.machine.storage.TileEntityMassStorage;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.network.internal.FMLNetworkHandler;
@@ -184,6 +186,14 @@ public class BlockMassStorage extends BlockContainer implements IBlockMulti, ILo
 	@Override
 	public int getSubCount() {
 		return 4;
+	}
+
+	@Override
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> items){
+		if(tab == CreativeTabs.SEARCH || tab == this.getCreativeTabToDisplayOn())
+			for(int i = 0; i < 4; ++i) {
+				items.add(new ItemStack(this, 1, i));
+			}
 	}
 
 	@Override
