@@ -17,7 +17,7 @@ import net.minecraft.util.SoundCategory;
 
 public class TileEntityLockableBase extends TileEntity {
 	protected int lock;
-	private boolean isLocked = false;
+	public boolean isLocked = false;
 	protected double lockMod = 0.1D;
 
 	public boolean isLocked() {

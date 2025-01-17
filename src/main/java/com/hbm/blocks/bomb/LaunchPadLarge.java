@@ -18,8 +18,8 @@ import net.minecraft.world.World;
 
 public class LaunchPadLarge extends BlockDummyable implements IBomb {
 
-	public LaunchPadLarge(String s, Material mat) {
-		super(mat, s);
+	public LaunchPadLarge(Material materialIn, String s) {
+		super(materialIn, s);
 		this.bounding.add(new AxisAlignedBB(-4.5D, 0D, -4.5D, 4.5D, 1D, -0.5D));
 		this.bounding.add(new AxisAlignedBB(-4.5D, 0D, 0.5D, 4.5D, 1D, 4.5D));
 		this.bounding.add(new AxisAlignedBB(-4.5D, 0.875D, -0.5D, 4.5D, 1D, 0.5D));

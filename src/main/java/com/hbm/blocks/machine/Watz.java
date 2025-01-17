@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class Watz extends BlockDummyable {
 
-	public Watz(String s) {
+	public Watz(Material materialIn, String s) {
 		super(Material.IRON, s);
 	}
 
