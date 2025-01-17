@@ -6,7 +6,6 @@ import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
 import com.hbm.render.amlfrom1710.Vec3;
-
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 

@@ -4,7 +4,6 @@ import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.blocks.network.energy.PowerDetector;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
 import net.minecraft.util.ITickable;
 
 public class TileEntityMachineDetector extends TileEntityLoadedBase implements ITickable, IEnergyReceiverMK2 {

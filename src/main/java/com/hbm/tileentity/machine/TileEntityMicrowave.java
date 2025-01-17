@@ -4,7 +4,6 @@ import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;

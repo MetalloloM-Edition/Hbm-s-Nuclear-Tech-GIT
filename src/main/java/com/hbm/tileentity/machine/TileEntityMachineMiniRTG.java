@@ -4,7 +4,6 @@ import api.hbm.energymk2.IEnergyProviderMK2;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
 import net.minecraft.util.ITickable;
 
 public class TileEntityMachineMiniRTG extends TileEntityLoadedBase implements ITickable, IEnergyProviderMK2 {

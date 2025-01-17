@@ -1,15 +1,10 @@
 package com.hbm.blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.hbm.handler.MultiblockHandlerXR;
 import com.hbm.interfaces.ICopiable;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.InventoryHelper;
 import com.hbm.main.MainRegistry;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -31,7 +26,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
@@ -39,6 +33,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public abstract class BlockDummyable extends BlockContainer implements ICustomBlockHighlight, ICopiable {
 

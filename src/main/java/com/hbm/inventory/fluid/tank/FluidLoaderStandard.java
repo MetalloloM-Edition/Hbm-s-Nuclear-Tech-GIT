@@ -2,7 +2,6 @@ package com.hbm.inventory.fluid.tank;
 
 import com.hbm.inventory.FluidContainerRegistry;
 import com.hbm.inventory.fluid.FluidType;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 

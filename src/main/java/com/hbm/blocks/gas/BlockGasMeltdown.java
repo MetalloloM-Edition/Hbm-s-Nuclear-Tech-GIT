@@ -29,17 +29,17 @@ public class BlockGasMeltdown extends BlockGasBase {
     }
 
     @Override
-    public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity){
+    public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
 
-        if(!(entity instanceof EntityLivingBase))
+        if (!(entity instanceof EntityLivingBase))
             return;
 
         EntityLivingBase entityLiving = (EntityLivingBase) entity;
 
-        ContaminationUtil.contaminate((EntityLivingBase)entity, ContaminationUtil.HazardType.RADIATION, ContaminationUtil.ContaminationType.CREATIVE, 0.5F);
+        ContaminationUtil.contaminate((EntityLivingBase) entity, ContaminationUtil.HazardType.RADIATION, ContaminationUtil.ContaminationType.CREATIVE, 0.5F);
         entityLiving.addPotionEffect(new PotionEffect(HbmPotion.radiation, 60 * 20, 2));
 
-        if(ArmorRegistry.hasAllProtection(entityLiving, EntityEquipmentSlot.HEAD, ArmorRegistry.HazardClass.PARTICLE_FINE)) {
+        if (ArmorRegistry.hasAllProtection(entityLiving, EntityEquipmentSlot.HEAD, ArmorRegistry.HazardClass.PARTICLE_FINE)) {
             ArmorUtil.damageGasMaskFilter(entityLiving, 1);
         } else {
             HbmLivingProps.incrementAsbestos(entityLiving, 5); // Mesothelioma can be developed as a result of exposure to radiation in the lungs
@@ -48,7 +48,7 @@ public class BlockGasMeltdown extends BlockGasBase {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, World world, BlockPos pos, Random rand){
+    public void randomDisplayTick(IBlockState stateIn, World world, BlockPos pos, Random rand) {
         super.randomDisplayTick(stateIn, world, pos, rand);
         world.spawnParticle(EnumParticleTypes.TOWN_AURA, pos.getX() + rand.nextFloat(), pos.getY() + rand.nextFloat(), pos.getZ() + rand.nextFloat(), 0.0D, 0.0D, 0.0D);
     }
@@ -56,7 +56,7 @@ public class BlockGasMeltdown extends BlockGasBase {
     @Override
     public ForgeDirection getFirstDirection(World world, int x, int y, int z) {
 
-        if(world.rand.nextInt(2) == 0)
+        if (world.rand.nextInt(2) == 0)
             return ForgeDirection.UP;
 
         return ForgeDirection.DOWN;
@@ -70,11 +70,11 @@ public class BlockGasMeltdown extends BlockGasBase {
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
 
-        if(!world.isRemote) {
+        if (!world.isRemote) {
 
             ForgeDirection dir = ForgeDirection.getOrientation(rand.nextInt(6));
 
-            if(rand.nextInt(7) == 0 && world.getBlockState(pos.add(dir.offsetX, dir.offsetY, dir.offsetZ)).getBlock() == Blocks.AIR) {
+            if (rand.nextInt(7) == 0 && world.getBlockState(pos.add(dir.offsetX, dir.offsetY, dir.offsetZ)).getBlock() == Blocks.AIR) {
                 world.setBlockState(pos.add(dir.offsetX, dir.offsetY, dir.offsetZ), ModBlocks.gas_radon_dense.getDefaultState());
             }
 
@@ -82,7 +82,7 @@ public class BlockGasMeltdown extends BlockGasBase {
                 RadiationSavedData.incrementRad(world, pos, 5F, 50F);
             }
 
-            if(rand.nextInt(350) == 0) {
+            if (rand.nextInt(350) == 0) {
                 world.setBlockToAir(pos);
                 return;
             }

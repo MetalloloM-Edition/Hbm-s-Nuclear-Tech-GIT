@@ -9,7 +9,6 @@ import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.INBTPacketReceiver;
-
 import com.hbm.tileentity.TileEntityLoadedBase;
 import com.hbm.util.Tuple;
 import net.minecraft.nbt.NBTTagCompound;

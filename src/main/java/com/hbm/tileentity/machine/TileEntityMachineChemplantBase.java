@@ -1,9 +1,5 @@
 package com.hbm.tileentity.machine;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import api.hbm.fluid.IFluidUser;
 import com.hbm.blocks.BlockDummyable;
@@ -11,18 +7,16 @@ import com.hbm.forgefluid.ModForgeFluids;
 import com.hbm.interfaces.IFFtoNTMF;
 import com.hbm.inventory.ChemplantRecipes;
 import com.hbm.inventory.RecipesCommon.AStack;
-import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.items.ModItems;
 import com.hbm.lib.DirPos;
-import com.hbm.lib.Library;
 import com.hbm.lib.ForgeDirection;
+import com.hbm.lib.Library;
 import com.hbm.tileentity.IGUIProvider;
 import com.hbm.tileentity.TileEntityMachineBase;
 import com.hbm.util.InventoryUtil;
-
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -40,6 +34,9 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class TileEntityMachineChemplantBase extends TileEntityMachineBase implements IEnergyReceiverMK2, ITickable, IFluidUser, IGUIProvider, IFFtoNTMF {
 	public long power;

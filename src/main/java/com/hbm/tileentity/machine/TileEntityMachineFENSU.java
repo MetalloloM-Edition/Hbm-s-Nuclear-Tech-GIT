@@ -3,7 +3,6 @@ package com.hbm.tileentity.machine;
 import api.hbm.energymk2.Nodespace;
 import com.hbm.lib.DirPos;
 import com.hbm.lib.Library;
-
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

@@ -7,7 +7,6 @@ import com.hbm.util.I18nUtil;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;

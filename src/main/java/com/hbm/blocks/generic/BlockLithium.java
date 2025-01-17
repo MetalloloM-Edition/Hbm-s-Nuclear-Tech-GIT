@@ -1,12 +1,8 @@
 package com.hbm.blocks.generic;
 
-import java.util.List;
-import java.util.Random;
-
+import com.hbm.blocks.ModBlocks;
 import com.hbm.interfaces.IItemHazard;
 import com.hbm.modules.ItemHazardModule;
-import com.hbm.blocks.ModBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,6 +13,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockLithium extends Block implements IItemHazard {
 
@@ -42,11 +41,11 @@ public class BlockLithium extends Block implements IItemHazard {
 		if(world.isRemote)
 			return false;
 
-		return world.getBlockState(new BlockPos(x + 1, y, z)).getMaterial() == Material.WATER || 
-				world.getBlockState(new BlockPos(x - 1, y, z)).getMaterial() == Material.WATER || 
-				world.getBlockState(new BlockPos(x, y + 1, z)).getMaterial() == Material.WATER || 
-				world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER || 
-				world.getBlockState(new BlockPos(x, y, z + 1)).getMaterial() == Material.WATER || 
+		return world.getBlockState(new BlockPos(x + 1, y, z)).getMaterial() == Material.WATER ||
+				world.getBlockState(new BlockPos(x - 1, y, z)).getMaterial() == Material.WATER ||
+				world.getBlockState(new BlockPos(x, y + 1, z)).getMaterial() == Material.WATER ||
+				world.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER ||
+				world.getBlockState(new BlockPos(x, y, z + 1)).getMaterial() == Material.WATER ||
 				world.getBlockState(new BlockPos(x, y, z - 1)).getMaterial() == Material.WATER;
 	}
 
@@ -65,7 +64,7 @@ public class BlockLithium extends Block implements IItemHazard {
 			world.newExplosion(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 15, false, true);
 		}
 	}
-	
+
 	@Override
 	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 		super.addInformation(stack, player, tooltip, advanced);

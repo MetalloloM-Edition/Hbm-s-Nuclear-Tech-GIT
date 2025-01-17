@@ -1,15 +1,14 @@
 package com.hbm.blocks.generic;
 
-import java.util.Random;
-
 import com.hbm.blocks.ModBlocks;
 import com.hbm.items.ModItems;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
+import java.util.Random;
+
 public class BlockDepthOre extends BlockDepth {
-	
+
 	public BlockDepthOre(String s){
 		super(s);
 	}
@@ -37,13 +36,13 @@ public class BlockDepthOre extends BlockDepth {
 		if(this == ModBlocks.ore_depth_nether_nitan) {
 			return ModItems.powder_nitan_mix;
 		}
-		
+
 		return super.getItemDropped(state, rand, fortune);
 	}
-	
+
 	@Override
 	public int quantityDropped(Random rand) {
-		
+
 		if(this == ModBlocks.ore_depth_cinnebar) {
 			return 2 + rand.nextInt(3);
 		}
@@ -56,7 +55,7 @@ public class BlockDepthOre extends BlockDepth {
 		if(this == ModBlocks.ore_depth_nether_nitan) {
 			return 1;
 		}
-		
+
 		return super.quantityDropped(rand);
 	}
 }

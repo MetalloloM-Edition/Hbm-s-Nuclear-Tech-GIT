@@ -165,9 +165,8 @@ public class ModEventHandlerImpact {
 		TomSaveData.resetLastCached();
 		
 		if(!(event.getWorld().provider instanceof WorldProviderEarth)) {
-			if (!DimensionManager.isDimensionRegistered(0)) {
-				DimensionManager.registerDimension(0, DimensionType.register("Earth", "_earth", 0, WorldProviderEarth.class, true));
-			}
+			//DimensionManager.unregisterDimension(0);
+			//DimensionManager.registerDimension(0, DimensionType.register("overworld", "", 0, WorldProviderEarth.class, true));
 		}
 	}
 

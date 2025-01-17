@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-/*   
+/*
  *   ___________
  *  /           \
  * |\___________/|
@@ -23,29 +23,29 @@ import java.util.Random;
  * | |           |
  * | '         . |
  *  \___________/
- *  
+ *
  *      PU-238
- * 
+ *
  */
 public class BlockDirt extends Block {
 
-	public BlockDirt(Material mat) {
-		super(mat);
-	}
+    public BlockDirt(Material mat) {
+        super(mat);
+    }
 
-	public BlockDirt(Material mat, boolean tick, String s) {
-		super(mat);
-		this.setUnlocalizedName(s);
-		this.setRegistryName(s);
-		this.setTickRandomly(tick);
-		this.setSoundType(SoundType.GROUND);
-		ModBlocks.ALL_BLOCKS.add(this);
-	}
+    public BlockDirt(Material mat, boolean tick, String s) {
+        super(mat);
+        this.setUnlocalizedName(s);
+        this.setRegistryName(s);
+        this.setTickRandomly(tick);
+        this.setSoundType(SoundType.GROUND);
+        ModBlocks.ALL_BLOCKS.add(this);
+    }
 
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(Blocks.DIRT);
-	}
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return Item.getItemFromBlock(Blocks.DIRT);
+    }
 
 	/*@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
@@ -62,20 +62,19 @@ public class BlockDirt extends Block {
 		}
 	}*/
 
-	@Override
-	public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
-		
-		if(!world.isRemote) {
-			TomSaveData data = TomSaveData.forWorld(world);
-			
-			int light = Math.max(world.getLightFor(EnumSkyBlock.BLOCK, pos.up()), (int) (world.getLight(pos.up()) * (1 - data.dust)));
-			if(light >= 9 && data.fire == 0) {
-				world.setBlockState(pos, Blocks.GRASS.getDefaultState());
-				if(world.getBlockState(pos.down())==Blocks.DIRT)
-				{
-					world.setBlockState(pos.down(), ModBlocks.impact_dirt.getDefaultState());
-				}
-			}
-		}
-	}
+    @Override
+    public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
+
+        if (!world.isRemote) {
+            TomSaveData data = TomSaveData.forWorld(world);
+
+            int light = Math.max(world.getLightFor(EnumSkyBlock.BLOCK, pos.up()), (int) (world.getLight(pos.up()) * (1 - data.dust)));
+            if (light >= 9 && data.fire == 0) {
+                world.setBlockState(pos, Blocks.GRASS.getDefaultState());
+                if (world.getBlockState(pos.down()) == Blocks.DIRT) {
+                    world.setBlockState(pos.down(), ModBlocks.impact_dirt.getDefaultState());
+                }
+            }
+        }
+    }
 }

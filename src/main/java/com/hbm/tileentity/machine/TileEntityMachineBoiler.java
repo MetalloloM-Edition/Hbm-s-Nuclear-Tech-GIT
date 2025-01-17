@@ -18,7 +18,6 @@ import com.hbm.packet.FluidTankPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.IGUIProvider;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
@@ -34,8 +33,6 @@ import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.ArrayList;
 
 public class TileEntityMachineBoiler extends TileEntityMachineBase implements ITickable, IFluidStandardTransceiver, IGUIProvider, ITankPacketAcceptor, IFFtoNTMF {
 

@@ -2,14 +2,12 @@ package com.hbm.tileentity.machine;
 
 import api.hbm.energymk2.IEnergyProviderMK2;
 import com.hbm.blocks.BlockDummyable;
-
-import com.hbm.util.ContaminationUtil;
-import com.hbm.lib.Library;
 import com.hbm.lib.ForgeDirection;
+import com.hbm.lib.Library;
 import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
+import com.hbm.util.ContaminationUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

@@ -6,7 +6,6 @@ import com.hbm.lib.ItemStackHandlerWrapper;
 import com.hbm.packet.BufPacket;
 import com.hbm.packet.NBTPacket;
 import com.hbm.packet.PacketDispatcher;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

@@ -1,13 +1,13 @@
 package com.hbm.inventory.fluid.trait;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.hbm.util.BobMathUtil;
 import com.hbm.util.I18nUtil;
 import com.mojang.realmsclient.gui.ChatFormatting;
+
+import java.io.IOException;
+import java.util.List;
 
 public class FT_Flammable extends FluidTrait {
 	

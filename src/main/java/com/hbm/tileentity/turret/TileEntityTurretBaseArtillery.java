@@ -2,9 +2,6 @@ package com.hbm.tileentity.turret;
 
 import com.hbm.blocks.BlockDummyable;
 import com.hbm.lib.ForgeDirection;
-import li.cil.oc.api.machine.Arguments;
-import li.cil.oc.api.machine.Callback;
-import li.cil.oc.api.machine.Context;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 

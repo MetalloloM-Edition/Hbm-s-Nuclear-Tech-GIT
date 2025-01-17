@@ -1,12 +1,9 @@
 package com.hbm.blocks.generic;
 
-import java.util.Random;
-
-import com.hbm.blocks.ModBlocks;
-import com.hbm.items.ModItems;
-
 import api.hbm.block.IDrillInteraction;
 import api.hbm.block.IMiningDrill;
+import com.hbm.blocks.ModBlocks;
+import com.hbm.items.ModItems;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
@@ -19,6 +16,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 
+import java.util.Random;
+
 public class BlockCluster extends BlockOre implements IDrillInteraction {
 
 	public BlockCluster(String s) {
@@ -26,7 +25,7 @@ public class BlockCluster extends BlockOre implements IDrillInteraction {
 		this.setUnlocalizedName(s);
 		this.setRegistryName(s);
 		this.setHarvestLevel("pickaxe", 1);
-		
+
 		ModBlocks.ALL_BLOCKS.add(this);
 	}
 
@@ -34,7 +33,7 @@ public class BlockCluster extends BlockOre implements IDrillInteraction {
 	public Item getItemDropped(IBlockState state, Random rand, int fortune){
 		return Items.AIR;
 	}
-	
+
 	@Override
 	public void harvestBlock(World world, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack){
 		if(player instanceof FakePlayer || player == null) {
@@ -42,23 +41,23 @@ public class BlockCluster extends BlockOre implements IDrillInteraction {
 		}
 
 		if(!world.isRemote && world.getGameRules().getBoolean("doTileDrops") && !world.restoringBlockSnapshots) {
-			
+
 			Item drop = getDrop();
-			
+
 			if(drop == null)
 				return;
-			
+
 			float f = 0.7F;
 			double mX = (double) (world.rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
 			double mY = (double) (world.rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
 			double mZ = (double) (world.rand.nextFloat() * f) + (double) (1.0F - f) * 0.5D;
-			
+
 			EntityItem entityitem = new EntityItem(world, (double) pos.getX() + mX, (double) pos.getY() + mY, (double) pos.getZ() + mZ, new ItemStack(drop));
 			entityitem.setPickupDelay(10);
 			world.spawnEntity(entityitem);
 		}
 	}
-	
+
 	private Item getDrop() {
 
 		if(this == ModBlocks.cluster_iron)
@@ -71,7 +70,7 @@ public class BlockCluster extends BlockOre implements IDrillInteraction {
 			return ModItems.crystal_copper;
 		if(this == ModBlocks.basalt_gem)
 			return ModItems.gem_volcanic;
-		
+
 		return null;
 	}
 

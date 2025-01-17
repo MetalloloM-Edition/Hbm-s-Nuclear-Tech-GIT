@@ -1,16 +1,15 @@
 package com.hbm.inventory;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
-
 import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HeatRecipes extends SerializableRecipe {
 

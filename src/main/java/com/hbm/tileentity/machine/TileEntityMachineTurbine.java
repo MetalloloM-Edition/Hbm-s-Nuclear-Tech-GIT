@@ -1,5 +1,6 @@
 package com.hbm.tileentity.machine;
 
+import api.hbm.energymk2.IBatteryItem;
 import api.hbm.energymk2.IEnergyProviderMK2;
 import api.hbm.fluid.IFluidStandardTransceiver;
 import com.hbm.forgefluid.FFUtils;
@@ -18,8 +19,6 @@ import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.IGUIProvider;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
-import api.hbm.energymk2.IBatteryItem;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;

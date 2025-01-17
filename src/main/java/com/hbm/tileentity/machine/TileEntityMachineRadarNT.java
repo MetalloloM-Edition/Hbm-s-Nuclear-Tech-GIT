@@ -1,17 +1,12 @@
 package com.hbm.tileentity.machine;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Function;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
+import api.hbm.entity.IRadarDetectable;
 import api.hbm.entity.IRadarDetectableNT;
 import api.hbm.entity.RadarEntry;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
-import com.hbm.blocks.ModBlocks;
-import com.hbm.config.WeaponConfig;
+import com.hbm.capability.HbmLivingProps;
 import com.hbm.handler.CompatHandler;
 import com.hbm.interfaces.IControlReceiver;
 import com.hbm.inventory.container.ContainerMachineRadarNT;
@@ -20,17 +15,17 @@ import com.hbm.inventory.gui.GUIMachineRadarNTSlots;
 import com.hbm.items.ISatChip;
 import com.hbm.items.ModItems;
 import com.hbm.items.tool.ItemCoordinateBase;
-import com.hbm.lib.*;
+import com.hbm.lib.DirPos;
+import com.hbm.lib.HBMSoundHandler;
+import com.hbm.lib.Library;
 import com.hbm.main.MainRegistry;
-import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.BufPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.saveddata.satellites.*;
-import com.hbm.tileentity.*;
-import com.hbm.capability.HbmLivingProps;
-
-import api.hbm.entity.IRadarDetectable;
-import api.hbm.entity.IRadarDetectable.RadarTargetType;
+import com.hbm.tileentity.IConfigurableMachine;
+import com.hbm.tileentity.IGUIProvider;
+import com.hbm.tileentity.IRadarCommandReceiver;
+import com.hbm.tileentity.TileEntityMachineBase;
 import com.hbm.util.Tuple;
 import com.hbm.world.WorldUtil;
 import io.netty.buffer.ByteBuf;
@@ -38,15 +33,13 @@ import li.cil.oc.api.machine.Arguments;
 import li.cil.oc.api.machine.Callback;
 import li.cil.oc.api.machine.Context;
 import li.cil.oc.api.network.SimpleComponent;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
@@ -61,6 +54,11 @@ import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.common.network.internal.FMLNetworkHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
 
 @Optional.InterfaceList({@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")})
 public class TileEntityMachineRadarNT extends TileEntityMachineBase implements ITickable, IEnergyReceiverMK2, IGUIProvider, IConfigurableMachine, IControlReceiver, SimpleComponent, CompatHandler.OCComponent {

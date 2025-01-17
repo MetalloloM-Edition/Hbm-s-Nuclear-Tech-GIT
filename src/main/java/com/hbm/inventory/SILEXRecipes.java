@@ -1,30 +1,25 @@
 package com.hbm.inventory;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import static com.hbm.inventory.OreDictManager.*;
-import com.hbm.forgefluid.ModForgeFluids;
+import com.hbm.blocks.ModBlocks;
 import com.hbm.inventory.RecipesCommon.ComparableStack;
 import com.hbm.inventory.RecipesCommon.NbtComparableStack;
 import com.hbm.inventory.RecipesCommon.OreDictStack;
 import com.hbm.inventory.fluid.Fluids;
-import com.hbm.items.machine.ItemFELCrystal.EnumWavelengths;
 import com.hbm.items.ModItems;
+import com.hbm.items.machine.ItemFELCrystal.EnumWavelengths;
 import com.hbm.items.machine.ItemFluidIcon;
 import com.hbm.items.special.ItemWasteLong;
 import com.hbm.items.special.ItemWasteShort;
-import com.hbm.blocks.ModBlocks;
 import com.hbm.util.WeightedRandomObject;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.*;
+import java.util.Map.Entry;
+
+import static com.hbm.inventory.OreDictManager.*;
 
 public class SILEXRecipes {
 

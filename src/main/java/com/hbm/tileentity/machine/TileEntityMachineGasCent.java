@@ -15,7 +15,6 @@ import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import com.hbm.util.BufferUtil;
 import com.hbm.util.InventoryUtil;
 import io.netty.buffer.ByteBuf;

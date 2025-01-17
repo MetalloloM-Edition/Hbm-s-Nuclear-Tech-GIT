@@ -1,12 +1,9 @@
 package com.hbm.entity.effect;
 
-import java.util.ArrayList;
-
 import com.hbm.interfaces.IConstantRenderer;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.main.MainRegistry;
 import com.hbm.render.amlfrom1710.Vec3;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -15,9 +12,10 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
 /*
  * Toroidial Convection Simulation Explosion Effect
  * Tor                             Ex

@@ -1,14 +1,11 @@
 package com.hbm.inventory;
 
-import java.util.LinkedHashMap;
-import java.util.HashMap;
-import java.util.HashSet;
-
 import com.hbm.items.ModItems;
-
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 
 public class WasteDrumRecipes {
 

@@ -27,6 +27,7 @@ public class AdvancementManager {
 	public static Advancement achFOEQ;
 	public static Advancement achFiend;
 	public static Advancement achFiend2;
+	public static Advancement achGoFish;
 	public static Advancement bobMetalworks;
 	public static Advancement bobAssembly;
 	public static Advancement bobChemistry;
@@ -78,6 +79,7 @@ public class AdvancementManager {
 		achStratum = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "achstratum"));
 		achMeltdown = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "achmeltdown"));
 		achOmega12 = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "achomega12"));
+		achGoFish = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "achgofish"));
 		digammaSee = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "digammasee"));
 		digammaFeel = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "digammafeel"));
 		digammaKnow = adv.getAdvancement(new ResourceLocation(RefStrings.MODID, "digammaknow"));

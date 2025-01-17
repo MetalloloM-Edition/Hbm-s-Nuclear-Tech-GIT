@@ -1,7 +1,7 @@
 package com.hbm.tileentity.machine;
 
-import java.util.List;
-
+import api.hbm.block.IDrillInteraction;
+import api.hbm.block.IMiningDrill;
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import api.hbm.fluid.IFluidStandardSender;
 import com.hbm.blocks.ModBlocks;
@@ -16,16 +16,13 @@ import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemMachineUpgrade;
+import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.Library;
-import com.hbm.lib.ForgeDirection;
+import com.hbm.packet.LoopedSoundPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.TileEntityMachineBase;
-import com.hbm.packet.LoopedSoundPacket;
 import com.hbm.util.InventoryUtil;
-
-import api.hbm.block.IDrillInteraction;
-import api.hbm.block.IMiningDrill;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -48,6 +45,8 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
+
+import java.util.List;
 
 public class TileEntityMachineMiningLaser extends TileEntityMachineBase implements ITickable, IEnergyReceiverMK2, IFluidStandardSender, IMiningDrill, IFFtoNTMF {
 

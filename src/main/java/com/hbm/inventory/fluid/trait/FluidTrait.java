@@ -1,16 +1,15 @@
 package com.hbm.inventory.fluid.trait;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.HashBiMap;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.inventory.fluid.trait.FluidTraitSimple.*;
-
 import net.minecraft.world.World;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class FluidTrait {
 	

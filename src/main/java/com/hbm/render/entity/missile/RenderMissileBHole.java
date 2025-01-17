@@ -1,27 +1,25 @@
 package com.hbm.render.entity.missile;
 
-import org.lwjgl.opengl.GL11;
-
-import com.hbm.entity.missile.EntityMissileBHole;
+import com.hbm.entity.missile.EntityMissileTier0;
 import com.hbm.main.ResourceManager;
 import com.hbm.render.RenderHelper;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import org.lwjgl.opengl.GL11;
 
-public class RenderMissileBHole extends Render<EntityMissileBHole> {
+public class RenderMissileBHole extends Render<EntityMissileTier0.EntityMissileBHole> {
 
-	public static final IRenderFactory<EntityMissileBHole> FACTORY = (RenderManager man) -> {return new RenderMissileBHole(man);};
+	public static final IRenderFactory<EntityMissileTier0.EntityMissileBHole> FACTORY = (RenderManager man) -> {return new RenderMissileBHole(man);};
 	
 	protected RenderMissileBHole(RenderManager renderManager) {
 		super(renderManager);
 	}
 
 	@Override
-	public void doRender(EntityMissileBHole missile, double x, double y, double z, float entityYaw, float partialTicks) {
+	public void doRender(EntityMissileTier0.EntityMissileBHole missile, double x, double y, double z, float entityYaw, float partialTicks) {
 		GL11.glPushMatrix();
 		GL11.glPushAttrib(GL11.GL_LIGHTING_BIT);
 		GlStateManager.enableLighting();
@@ -43,7 +41,7 @@ public class RenderMissileBHole extends Render<EntityMissileBHole> {
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(EntityMissileBHole entity) {
+	protected ResourceLocation getEntityTexture(EntityMissileTier0.EntityMissileBHole entity) {
 		return ResourceManager.missileMicroBHole_tex;
 	}
 

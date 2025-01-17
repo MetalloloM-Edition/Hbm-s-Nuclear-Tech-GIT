@@ -1,15 +1,14 @@
 package com.hbm.tileentity.network.energy;
 
 import api.hbm.energymk2.IEnergyProviderMK2;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import com.hbm.config.GeneralConfig;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
-import cofh.redstoneflux.api.IEnergyReceiver;
-import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraft.util.EnumFacing;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.Optional;
 
 @Optional.InterfaceList({@Optional.Interface(iface = "cofh.redstoneflux.api.IEnergyReceiver", modid = "redstoneflux")})

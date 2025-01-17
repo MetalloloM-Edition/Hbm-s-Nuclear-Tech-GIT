@@ -452,10 +452,8 @@ public abstract class WorldProviderCelestial extends WorldProvider {
 		//  * sun extinction/modification events (the sun will appear normal even if it has been turned into a black hole)
 		//  * player launched satellites won't be visible
 		//  * artificial moons/rings (once implemented) won't be visible
-		MainRegistry.logger.info("Do we even get here?");
 		if(skyProvider == null) {
 			skyProvider = new SkyProviderCelestial();
-			MainRegistry.logger.info("Ja, we do");
 		}
 		return skyProvider;
 	}
@@ -508,32 +506,32 @@ public abstract class WorldProviderCelestial extends WorldProvider {
 	/// FISH ///
 
 	// returning null from any of these methods will revert to overworld loot tables
-	//public ArrayList<WeightedRandomFishable> getFish() {
-		//if(junk == null) {
-			//junk = new ArrayList<>();
-			// junk.add((new WeightedRandomFishable(new ItemStack(Items.leather_boots), 10)).func_150709_a(0.9F));
-			// junk.add(new WeightedRandomFishable(new ItemStack(Items.leather), 10));
-			// junk.add(new WeightedRandomFishable(new ItemStack(Items.bone), 10));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Items.potionitem), 10));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Items.string), 5));
-			//junk.add((new WeightedRandomFishable(new ItemStack(Items.fishing_rod), 2)).func_150709_a(0.9F));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Items.bowl), 10));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Items.stick), 5));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Items.dye, 10, 0), 1));
-			//junk.add(new WeightedRandomFishable(new ItemStack(Blocks.tripwire_hook), 10));
-			// junk.add(new WeightedRandomFishable(new ItemStack(Items.rotten_flesh), 10));
-		//}
+	/*public ArrayList<WeightedRandomFishable> getFish() {
+		if(junk == null) {
+			junk = new ArrayList<>();
+			junk.add((new WeightedRandomFishable(new ItemStack(Items.leather_boots), 10)).func_150709_a(0.9F));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.leather), 10));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.bone), 10));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.potionitem), 10));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.string), 5));
+			junk.add((new WeightedRandomFishable(new ItemStack(Items.fishing_rod), 2)).func_150709_a(0.9F));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.bowl), 10));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.stick), 5));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.dye, 10, 0), 1));
+			junk.add(new WeightedRandomFishable(new ItemStack(Blocks.tripwire_hook), 10));
+			junk.add(new WeightedRandomFishable(new ItemStack(Items.rotten_flesh), 10));
+		}
 
-		//return junk;
-	//}
+		return junk;
+	}
 
-	//public ArrayList<WeightedRandomFishable> getJunk() {
-		//return null;
-	//}
+	public ArrayList<WeightedRandomFishable> getJunk() {
+		return null;
+	}
 
-	//public ArrayList<WeightedRandomFishable> getTreasure() {
-		//return null;
-	//}
+	public ArrayList<WeightedRandomFishable> getTreasure() {
+		return null;
+	}*/
 	/// FISH ///
 
 }

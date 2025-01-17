@@ -1,19 +1,16 @@
 package com.hbm.tileentity.machine;
 
-import java.util.HashMap;
-
 import api.hbm.energymk2.IEnergyProviderMK2;
 import com.hbm.forgefluid.FFUtils;
-import com.hbm.interfaces.ITankPacketAcceptor;
-import com.hbm.lib.ForgeDirection;
-import com.hbm.lib.Library;
 import com.hbm.forgefluid.ModForgeFluids;
+import com.hbm.interfaces.ITankPacketAcceptor;
 import com.hbm.inventory.EngineRecipes;
 import com.hbm.inventory.EngineRecipes.FuelGrade;
+import com.hbm.lib.ForgeDirection;
+import com.hbm.lib.Library;
 import com.hbm.packet.FluidTankPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -29,6 +26,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.items.CapabilityItemHandler;
+
+import java.util.HashMap;
 
 public class TileEntityMachineDiesel extends TileEntityMachineBase implements ITickable, IEnergyProviderMK2, IFluidHandler, ITankPacketAcceptor {
 

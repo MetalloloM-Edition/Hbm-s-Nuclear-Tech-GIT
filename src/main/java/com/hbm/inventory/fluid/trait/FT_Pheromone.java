@@ -5,7 +5,6 @@ import com.google.gson.stream.JsonWriter;
 import com.hbm.util.I18nUtil;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
-
 import java.io.IOException;
 import java.util.List;
 

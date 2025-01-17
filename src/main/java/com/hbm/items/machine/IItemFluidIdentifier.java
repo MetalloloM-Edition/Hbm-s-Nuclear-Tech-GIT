@@ -3,7 +3,6 @@ package com.hbm.items.machine;
 import com.hbm.inventory.fluid.FluidType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.FluidStack;
 
 public interface IItemFluidIdentifier {
 

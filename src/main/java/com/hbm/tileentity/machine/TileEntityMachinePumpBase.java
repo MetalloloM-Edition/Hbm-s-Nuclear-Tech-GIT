@@ -7,7 +7,6 @@ import com.hbm.forgefluid.FFUtils;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.Library;
-import com.hbm.main.MainRegistry;
 import com.hbm.tileentity.IConfigurableMachine;
 import com.hbm.tileentity.INBTPacketReceiver;
 import com.hbm.tileentity.TileEntityLoadedBase;

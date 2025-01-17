@@ -74,7 +74,10 @@ public class ResourceManager {
 
 	//UU
 	public static final IModelCustom uu_creator = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/machines/uu_creator.obj"));
-	
+
+	//Watz
+	public static final IModelCustom watz = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/reactors/watz.obj")).asVBO();
+	public static final IModelCustom watz_pump = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/machines/watz_pump.obj")).asVBO();
 	//FENSU
 	public static final IModelCustom fensu = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/machines/fensu.obj")).asVBO();
 
@@ -138,6 +141,7 @@ public class ResourceManager {
 	public static final IModelCustom missileThermo = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/missileThermo.obj")).asVBO();
 	public static final IModelCustom missileDoomsday = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/missileDoomsday.obj"));
 	public static final IModelCustom missileTaint = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/missileTaint.obj")).asVBO();
+	public static final IModelCustom missileStealth = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/missile_stealth.obj")).asVBO();
 	public static final IModelCustom missileCarrier = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/missileCarrier.obj"));
 	public static final IModelCustom missileBooster = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/missileBooster.obj"));
 	public static final IModelCustom minerRocket = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/minerRocket.obj"));
@@ -396,6 +400,7 @@ public class ResourceManager {
 	
 	//Missile Parts
 	public static final IModelCustom missile_pad = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/missilePad.obj"));
+	public static final IModelCustom missile_erector = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/weapons/launch_pad_erector.obj")).asVBO();
 	public static final IModelCustom missile_assembly = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/missile_assembly.obj"));
 	public static final IModelCustom strut = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/strut.obj"));
 	public static final IModelCustom compact_launcher = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/compact_launcher.obj"));
@@ -503,6 +508,10 @@ public class ResourceManager {
 
 	//Drain
 	public static final IModelCustom drain = AdvancedModelLoader.loadModel(new ResourceLocation(RefStrings.MODID, "models/machines/drain.obj"));
+
+	//Watz
+	public static final ResourceLocation watz_tex = new ResourceLocation(RefStrings.MODID, "textures/models/machines/watz.png");
+	public static final ResourceLocation watz_pump_tex = new ResourceLocation(RefStrings.MODID, "textures/models/machines/watz_pump.png");
 	
 	//Radar
 	public static final IModelCustom radar_body = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/radar_base.obj")).asVBO();
@@ -560,6 +569,7 @@ public class ResourceManager {
 	public static final IModelCustom gavel = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/weapons/gavel.obj"));
 	public static final IModelCustom crucible = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/weapons/crucible.obj"));
 	public static final IModelCustom detonator_laser = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/weapons/detonator_laser.obj"));
+	public static final IModelCustom boltgun = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/weapons/boltgun.obj"));
 	
 	
 	// Control panel
@@ -962,6 +972,7 @@ public class ResourceManager {
 	public static final ResourceLocation crucible_guard = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/crucible_guard.png");
 	public static final ResourceLocation crucible_blade = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/crucible_blade.png");
 	public static final ResourceLocation crucible_blade_bloom = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/crucible_blade_bloom.png");
+	public static final ResourceLocation boltgun_tex = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/boltgun.png");
 	public static final ResourceLocation hs_sword_tex = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/hs_sword.png");
 	public static final ResourceLocation hf_sword_tex = new ResourceLocation(RefStrings.MODID, "textures/models/weapons/hf_sword.png");
 	
@@ -1148,6 +1159,7 @@ public class ResourceManager {
 	public static final ResourceLocation minerRocketGerald_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/minerRocket_gerald.png");
 	public static final ResourceLocation bobmazon_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/bobmazon.png");
 	public static final ResourceLocation missileMicroBHole_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/missileMicroBHole.png");
+	public static final ResourceLocation missileStealth_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/missile_stealth.png");
 	public static final ResourceLocation missileMicroSchrab_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/missileMicroSchrab.png");
 	public static final ResourceLocation missileMicroEMP_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missiles/missileMicroEMP.png");
 
@@ -1205,6 +1217,13 @@ public class ResourceManager {
 
 	//Missile Parts
 	public static final ResourceLocation missile_pad_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missile_parts/missilePad.png");
+	public static final ResourceLocation missile_erector_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/pad.png");
+	public static final ResourceLocation missile_erector_micro_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_micro.png");
+	public static final ResourceLocation missile_erector_v2_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_v2.png");
+	public static final ResourceLocation missile_erector_strong_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_strong.png");
+	public static final ResourceLocation missile_erector_huge_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_huge.png");
+	public static final ResourceLocation missile_erector_atlas_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_atlas.png");
+	public static final ResourceLocation missile_erector_abm_tex = new ResourceLocation(RefStrings.MODID, "textures/models/launchpad/erector_abm.png");
 	public static final ResourceLocation missile_assembly_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missile_parts/missile_assembly.png");
 	public static final ResourceLocation strut_tex = new ResourceLocation(RefStrings.MODID, "textures/models/missile_parts/strut.png");
 	public static final ResourceLocation docking_port_tex = new ResourceLocation(RefStrings.MODID, "textures/models/machines/docking_port.png");

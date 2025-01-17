@@ -1,9 +1,5 @@
 package com.hbm.inventory;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.Map.Entry;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
@@ -14,9 +10,6 @@ import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ItemEnums;
 import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemFluidIcon;
-
-import static com.hbm.inventory.OreDictManager.*;
-
 import com.hbm.util.Tuple;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
@@ -28,6 +21,15 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import static com.hbm.inventory.OreDictManager.*;
 
 public class RBMKOutgasserRecipes extends SerializableRecipe {
 

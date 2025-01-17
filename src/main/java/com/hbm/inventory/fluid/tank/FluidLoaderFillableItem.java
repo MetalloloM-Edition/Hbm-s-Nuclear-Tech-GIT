@@ -1,8 +1,7 @@
 package com.hbm.inventory.fluid.tank;
 
-import com.hbm.handler.ArmorModHandler;
-
 import api.hbm.fluid.IFillableItem;
+import com.hbm.handler.ArmorModHandler;
 import com.hbm.inventory.fluid.FluidType;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;

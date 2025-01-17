@@ -3,7 +3,6 @@ package com.hbm.render.tileentity;
 import com.hbm.blocks.BlockDummyable;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.main.ResourceManager;
-import com.hbm.render.item.ItemRenderBase;
 import com.hbm.tileentity.machine.TileEntityMachinePumpBase;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import org.lwjgl.opengl.GL11;

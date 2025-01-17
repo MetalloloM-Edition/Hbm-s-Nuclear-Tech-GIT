@@ -1,24 +1,17 @@
 package com.hbm.tileentity.machine;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import api.hbm.fluid.IFluidStandardTransceiver;
 import com.hbm.blocks.BlockDummyable;
 import com.hbm.blocks.machine.MachineChemplant;
-import com.hbm.forgefluid.FFUtils;
 import com.hbm.handler.MultiblockHandler;
 import com.hbm.interfaces.IFFtoNTMF;
 import com.hbm.inventory.ChemplantRecipes;
 import com.hbm.inventory.RecipesCommon.AStack;
 import com.hbm.inventory.UpgradeManager;
-import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.items.ModItems;
-import com.hbm.items.machine.ItemChemistryTemplate;
 import com.hbm.items.machine.ItemMachineUpgrade;
 import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
@@ -29,7 +22,6 @@ import com.hbm.packet.AuxParticlePacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.sound.AudioWrapper;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import com.hbm.util.InventoryUtil;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
@@ -53,6 +45,10 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TileEntityMachineChemplant extends TileEntityMachineBase implements IEnergyReceiverMK2, IFluidStandardTransceiver, ITickable, IFFtoNTMF {
 

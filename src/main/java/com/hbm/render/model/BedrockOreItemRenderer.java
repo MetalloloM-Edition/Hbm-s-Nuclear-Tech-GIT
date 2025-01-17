@@ -3,7 +3,6 @@ package com.hbm.render.model;
 import com.hbm.items.special.ItemBedrockOreNew;
 import com.hbm.main.MainRegistry;
 import com.hbm.render.RenderHelper;
-import com.hbm.render.icon.TextureAtlasSpriteMutatable;
 import com.hbm.render.item.TEISRBase;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;

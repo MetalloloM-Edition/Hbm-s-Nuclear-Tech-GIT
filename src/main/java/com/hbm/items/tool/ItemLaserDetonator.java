@@ -1,23 +1,14 @@
 package com.hbm.items.tool;
 
-import java.util.List;
-
-import com.hbm.interfaces.IHoldableWeapon;
-import com.hbm.render.item.ItemRendererDetonatorLaser;
-import com.hbm.render.misc.RenderScreenOverlay;
-import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import org.apache.logging.log4j.Level;
-
-import com.hbm.util.I18nUtil;
 import com.hbm.config.GeneralConfig;
 import com.hbm.interfaces.IBomb;
+import com.hbm.interfaces.IHoldableWeapon;
 import com.hbm.items.ModItems;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.Library;
 import com.hbm.main.MainRegistry;
-
+import com.hbm.render.misc.RenderScreenOverlay;
+import com.hbm.util.I18nUtil;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -29,6 +20,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.Level;
+
+import java.util.List;
 
 public class ItemLaserDetonator extends Item implements IHoldableWeapon {
 

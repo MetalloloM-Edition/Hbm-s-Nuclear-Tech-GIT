@@ -1,32 +1,12 @@
 package com.hbm.render.item;
 
 import com.hbm.inventory.fluid.Fluids;
-import com.hbm.items.special.ItemBedrockOre;
-import com.hbm.lib.RefStrings;
-import com.hbm.util.BobMathUtil;
-import net.minecraft.client.renderer.block.model.ItemOverrideList;
-import net.minecraft.client.renderer.color.IItemColor;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import org.lwjgl.opengl.GL11;
-
-import com.hbm.forgefluid.FFUtils;
-import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemForgeFluidIdentifier;
 import com.hbm.render.RenderHelper;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.Fluid;
-
-import javax.annotation.Nullable;
-import java.util.Collections;
+import org.lwjgl.opengl.GL11;
 
 public class FFIdentifierRender extends TEISRBase {
 

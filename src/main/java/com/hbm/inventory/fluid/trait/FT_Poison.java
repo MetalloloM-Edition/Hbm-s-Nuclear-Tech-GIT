@@ -1,12 +1,12 @@
 package com.hbm.inventory.fluid.trait;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.hbm.util.I18nUtil;
 import com.mojang.realmsclient.gui.ChatFormatting;
+
+import java.io.IOException;
+import java.util.List;
 
 @Deprecated //use FT_Toxin instead
 public class FT_Poison extends FluidTrait {

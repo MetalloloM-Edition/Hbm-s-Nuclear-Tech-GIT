@@ -1,11 +1,9 @@
 package com.hbm.render.entity.projectile;
 
 import com.hbm.entity.projectile.EntityArtilleryShell;
-import com.hbm.entity.projectile.EntityRBMKDebris;
 import com.hbm.main.ResourceManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import org.lwjgl.opengl.GL11;

@@ -1,17 +1,19 @@
 package com.hbm.tileentity.bomb;
 
 import api.hbm.energymk2.IEnergyReceiverMK2;
-import com.hbm.lib.Library;
-import com.hbm.lib.ForgeDirection;
-import com.hbm.items.ModItems;
 import com.hbm.interfaces.IBomb;
-import com.hbm.packet.AuxGaugePacket;
+import com.hbm.items.ModItems;
+import com.hbm.lib.ForgeDirection;
+import com.hbm.lib.Library;
 import com.hbm.packet.AuxElectricityPacket;
+import com.hbm.packet.AuxGaugePacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.packet.TEMissilePacket;
 import com.hbm.tileentity.TileEntityLoadedBase;
-import net.minecraftforge.fml.common.Optional;
-
+import li.cil.oc.api.machine.Arguments;
+import li.cil.oc.api.machine.Callback;
+import li.cil.oc.api.machine.Context;
+import li.cil.oc.api.network.SimpleComponent;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -20,16 +22,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-
-import li.cil.oc.api.machine.Arguments;
-import li.cil.oc.api.machine.Callback;
-import li.cil.oc.api.machine.Context;
-import li.cil.oc.api.network.SimpleComponent;
 
 @Optional.InterfaceList({@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")})
 public class TileEntityLaunchPad extends TileEntityLoadedBase implements ITickable, IEnergyReceiverMK2, SimpleComponent {

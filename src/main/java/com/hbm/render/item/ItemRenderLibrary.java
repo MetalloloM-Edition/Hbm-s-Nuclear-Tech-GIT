@@ -1,11 +1,5 @@
 package com.hbm.render.item;
 
-import java.util.HashMap;
-
-import com.hbm.render.tileentity.RenderSawmill;
-import net.minecraft.entity.SharedMonsterAttributes;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.animloader.AnimationWrapper;
 import com.hbm.animloader.AnimationWrapper.EndResult;
 import com.hbm.animloader.AnimationWrapper.EndType;
@@ -15,7 +9,7 @@ import com.hbm.items.ModItems;
 import com.hbm.main.ResourceManager;
 import com.hbm.render.amlfrom1710.Tessellator;
 import com.hbm.render.tileentity.RenderDemonLamp;
-
+import com.hbm.render.tileentity.RenderSawmill;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -23,6 +17,9 @@ import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.HashMap;
 
 public class ItemRenderLibrary {
 
@@ -1098,6 +1095,24 @@ public class ItemRenderLibrary {
 		        bindTexture(ResourceManager.missile_pad_tex); ResourceManager.missile_pad.renderAll();
 			}});
 
+		renderers.put(Item.getItemFromBlock(ModBlocks.launch_pad_large), new ItemRenderBase() {
+			public void renderInventory() {
+				GL11.glTranslated(0, -3.75, 0);
+				GL11.glScaled(1.625, 1.625, 1.625);
+			}
+			public void renderCommon() {
+				GL11.glScaled(0.5, 0.5, 0.5);
+				GL11.glRotatef(90, 0F, 1F, 0F);
+				GL11.glShadeModel(GL11.GL_SMOOTH);
+				bindTexture(ResourceManager.missile_erector_tex);
+				ResourceManager.missile_erector.renderPart("Pad");
+				bindTexture(ResourceManager.missile_erector_atlas_tex);
+				ResourceManager.missile_erector.renderPart("Atlas_Pad");
+				ResourceManager.missile_erector.renderPart("Atlas_Erector");
+				ResourceManager.missile_erector.renderPart("Atlas_Pivot");
+				GL11.glShadeModel(GL11.GL_FLAT);
+			}});
+
 		renderers.put(Item.getItemFromBlock(ModBlocks.compact_launcher), new ItemRenderBase() {
 			public void renderInventory() {
 				GL11.glTranslated(0, -4, 0);
@@ -1736,6 +1751,17 @@ public class ItemRenderLibrary {
 				GlStateManager.shadeModel(GL11.GL_SMOOTH);
 				bindTexture(ResourceManager.uu_creator_tex); ResourceManager.uu_creator.renderAll();
 				GlStateManager.shadeModel(GL11.GL_FLAT);
+			}});
+
+		renderers.put(Item.getItemFromBlock(ModBlocks.watz), new ItemRenderBase() {
+			public void renderInventory() {
+				GL11.glTranslated(0, -1, 0);
+				GL11.glScaled(2, 2, 2);
+			}
+			public void renderCommon() {
+				GL11.glShadeModel(GL11.GL_SMOOTH);
+				bindTexture(ResourceManager.watz_tex); ResourceManager.watz.renderAll();
+				GL11.glShadeModel(GL11.GL_FLAT);
 			}});
 
 		renderers.put(Item.getItemFromBlock(ModBlocks.machine_fraction_tower), new ItemRenderBase() {

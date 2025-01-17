@@ -12,11 +12,9 @@ import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.inventory.fluid.trait.FT_Corrosive;
 import com.hbm.lib.DirPos;
 import com.hbm.lib.Library;
-import com.hbm.main.MainRegistry;
 import com.hbm.tileentity.IFluidCopiable;
 import com.hbm.tileentity.IPersistentNBT;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import io.netty.buffer.ByteBuf;
 import li.cil.oc.api.machine.Arguments;
 import li.cil.oc.api.machine.Callback;

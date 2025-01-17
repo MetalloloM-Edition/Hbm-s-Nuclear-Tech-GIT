@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonWriter;
 import com.hbm.inventory.OreDictManager;
 import com.hbm.inventory.container.ContainerAshpit;
 import com.hbm.inventory.gui.GUIAshpit;
-import com.hbm.items.ItemEnums.*;
+import com.hbm.items.ItemEnums.EnumAshType;
 import com.hbm.items.ModItems;
 import com.hbm.tileentity.IConfigurableMachine;
 import com.hbm.tileentity.IGUIProvider;

@@ -1,31 +1,28 @@
 package com.hbm.inventory.gui;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.hbm.main.MainRegistry;
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.inventory.container.ContainerTurretBase;
 import com.hbm.lib.RefStrings;
-import com.hbm.util.I18nUtil;
 import com.hbm.packet.AuxButtonPacket;
 import com.hbm.packet.NBTControlPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.turret.TileEntityTurretBaseNT;
-
+import com.hbm.util.I18nUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.GL11;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class GUITurretBase extends GuiInfoContainer {
 
@@ -60,7 +57,6 @@ public abstract class GUITurretBase extends GuiInfoContainer {
 	@Override
 	public void onGuiClosed() {
 		super.onGuiClosed();
-		MainRegistry.logger.debug("Player: {}", mc.player);
 		if (mc.player != null) {
 			TileEntityTurretBaseNT.closeInventory(mc.player);
 		}

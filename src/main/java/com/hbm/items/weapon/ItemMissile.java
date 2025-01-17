@@ -1,20 +1,21 @@
 package com.hbm.items.weapon;
 
-import java.util.HashMap;
-import java.util.List;
-
+import com.hbm.entity.missile.EntityMissileCustom;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ModItems;
 import com.hbm.items.special.ItemLootCrate;
 import com.hbm.main.MainRegistry;
 import com.hbm.util.I18nUtil;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class ItemMissile extends Item {
 	
@@ -27,12 +28,10 @@ public class ItemMissile extends Item {
 	private String title;
 	private String author;
 	private String witty;
-	public final MissileTier tier;
 	
 	public ItemMissile(String s) {
 		this.setUnlocalizedName(s);
 		this.setRegistryName(s);
-		this.tier = MissileTier.TIER0;
 		this.setMaxStackSize(1);
 		this.setCreativeTab(MainRegistry.missileTab);
 		
@@ -70,20 +69,6 @@ public class ItemMissile extends Item {
 		FUSELAGE,
 		FINS,
 		THRUSTER
-	}
-
-	public enum MissileTier {
-		TIER0("Tier 0"),
-		TIER1("Tier 1"),
-		TIER2("Tier 2"),
-		TIER3("Tier 3"),
-		TIER4("Tier 4");
-
-		public String display;
-
-		private MissileTier(String display) {
-			this.display = display;
-		}
 	}
 	
 	public enum PartSize {
@@ -126,7 +111,17 @@ public class ItemMissile extends Item {
 		VOLCANO,
 		MIRV,
 		APOLLO,
-		SATELLITE
+		SATELLITE,
+
+		//shit solution but it works. this allows traits to be attached to these empty dummy types, allowing for custom warheads
+		CUSTOM0, CUSTOM1, CUSTOM2, CUSTOM3, CUSTOM4, CUSTOM5, CUSTOM6, CUSTOM7, CUSTOM8, CUSTOM9;
+
+		/** Overrides that type's impact effect. Only runs serverside */
+		public Consumer<EntityMissileCustom> impactCustom = null;
+		/** Runs at the beginning of the missile's update cycle, both client and serverside. */
+		public Consumer<EntityMissileCustom> updateCustom = null;
+		/** Override for the warhead's name in the missile description */
+		public String labelCustom = null;
 	}
 	
 	public enum FuelType {
@@ -291,6 +286,7 @@ public class ItemMissile extends Item {
 	}
 	
 	public String getWarhead(WarheadType type) {
+		if(type.labelCustom != null) return type.labelCustom;
 		
 		switch(type) {
 		case HE:

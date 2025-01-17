@@ -14,8 +14,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.List;
-
 public class MachineLiquefactor extends BlockDummyable implements ITooltipProvider {
 
     public MachineLiquefactor(String s) {

@@ -1,23 +1,16 @@
 package com.hbm.blocks.network;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.hbm.blocks.ModBlocks;
 import com.hbm.blocks.ILookOverlay;
+import com.hbm.blocks.ModBlocks;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
 import com.hbm.tileentity.network.TileEntityPipeBaseNT;
 import com.hbm.util.I18nUtil;
-import com.hbm.tileentity.conductor.TileEntityFFDuctBaseMk2;
-import com.hbm.tileentity.conductor.TileEntityFFFluidDuctMk2;
-
-import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
@@ -28,7 +21,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.Pre;
 
-import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlockFluidPipeMk2 extends BlockContainer implements ILookOverlay {
 

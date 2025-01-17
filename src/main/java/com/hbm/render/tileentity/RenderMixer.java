@@ -1,17 +1,15 @@
 package com.hbm.render.tileentity;
 
-import java.awt.Color;
-
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.tank.FluidTankNTM;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.main.ResourceManager;
 import com.hbm.tileentity.machine.TileEntityMachineMixer;
-
-import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import org.lwjgl.opengl.GL11;
+
+import java.awt.*;
 
 public class RenderMixer extends TileEntitySpecialRenderer<TileEntityMachineMixer> {
 

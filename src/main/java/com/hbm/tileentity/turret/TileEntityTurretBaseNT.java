@@ -1,9 +1,5 @@
 package com.hbm.tileentity.turret;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.blocks.BlockDummyable;
 import com.hbm.entity.logic.EntityBomber;
@@ -19,15 +15,14 @@ import com.hbm.inventory.control_panel.ControlEventSystem;
 import com.hbm.inventory.control_panel.IControllable;
 import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemTurretBiometry;
+import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.HBMSoundHandler;
 import com.hbm.lib.Library;
-import com.hbm.lib.ForgeDirection;
 import com.hbm.packet.AuxParticlePacketNT;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.particle.SpentCasing;
 import com.hbm.render.amlfrom1710.Vec3;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.INpc;
@@ -53,6 +48,10 @@ import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase implements IEnergyReceiverMK2, IControllable, IControlReceiver, ITickable {
 

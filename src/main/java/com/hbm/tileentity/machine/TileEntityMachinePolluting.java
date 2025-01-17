@@ -8,7 +8,6 @@ import com.hbm.inventory.fluid.tank.FluidTankNTM;
 import com.hbm.inventory.fluid.trait.FT_Polluting;
 import com.hbm.inventory.fluid.trait.FluidTrait;
 import com.hbm.lib.ForgeDirection;
-import com.hbm.lib.HBMSoundHandler;
 import com.hbm.tileentity.TileEntityMachineBase;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;

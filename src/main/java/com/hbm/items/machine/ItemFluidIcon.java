@@ -1,13 +1,9 @@
 package com.hbm.items.machine;
 
-import java.util.List;
-
 import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ModItems;
-import com.hbm.forgefluid.FFUtils;
-
 import com.hbm.lib.RefStrings;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -21,6 +17,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class ItemFluidIcon extends Item {
 

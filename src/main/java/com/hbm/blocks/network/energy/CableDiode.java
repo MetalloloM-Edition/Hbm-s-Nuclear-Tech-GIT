@@ -1,49 +1,43 @@
 package com.hbm.blocks.network.energy;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import api.hbm.block.IToolable;
+import api.hbm.energymk2.IEnergyConnectorBlock;
 import api.hbm.energymk2.IEnergyConnectorMK2;
 import api.hbm.energymk2.IEnergyReceiverMK2;
+import api.hbm.energymk2.IEnergyReceiverMK2.ConnectionPriority;
 import api.hbm.energymk2.Nodespace;
-import com.hbm.blocks.ModBlocks;
 import com.hbm.blocks.ILookOverlay;
 import com.hbm.blocks.ITooltipProvider;
-import com.hbm.lib.Library;
+import com.hbm.blocks.ModBlocks;
 import com.hbm.lib.ForgeDirection;
+import com.hbm.lib.Library;
 import com.hbm.tileentity.INBTPacketReceiver;
 import com.hbm.tileentity.TileEntityLoadedBase;
 import com.hbm.util.Compat;
 import com.hbm.util.I18nUtil;
-
-import api.hbm.block.IToolable;
-import api.hbm.energymk2.IEnergyConnectorBlock;
-import api.hbm.energymk2.IEnergyReceiverMK2.ConnectionPriority;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ITickable;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.Pre;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CableDiode extends BlockContainer implements IEnergyConnectorBlock, ILookOverlay, IToolable, ITooltipProvider {
 	

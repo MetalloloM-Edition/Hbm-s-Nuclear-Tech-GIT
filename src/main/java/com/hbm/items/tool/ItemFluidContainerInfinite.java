@@ -1,18 +1,14 @@
 package com.hbm.items.tool;
 
-import java.util.List;
-
-import com.hbm.forgefluid.HbmFluidHandlerItemStackInf;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.items.ModItems;
-
 import com.hbm.util.I18nUtil;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
+
+import java.util.List;
 
 public class ItemFluidContainerInfinite extends Item {
 

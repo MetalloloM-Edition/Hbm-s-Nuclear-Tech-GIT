@@ -1,10 +1,5 @@
 package com.hbm.inventory;
 
-import java.io.IOException;
-import java.util.*;
-
-import static com.hbm.inventory.OreDictManager.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -12,7 +7,6 @@ import com.google.gson.stream.JsonWriter;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.config.GeneralConfig;
 import com.hbm.config.MachineConfig;
-import com.hbm.interfaces.Spaghetti;
 import com.hbm.inventory.RecipesCommon.AStack;
 import com.hbm.inventory.RecipesCommon.ComparableStack;
 import com.hbm.inventory.RecipesCommon.OreDictStack;
@@ -20,11 +14,15 @@ import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemChemistryTemplate;
-
 import com.hbm.main.MainRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import java.io.IOException;
+import java.util.*;
+
+import static com.hbm.inventory.OreDictManager.*;
 
 public class ChemplantRecipes extends SerializableRecipe {
 

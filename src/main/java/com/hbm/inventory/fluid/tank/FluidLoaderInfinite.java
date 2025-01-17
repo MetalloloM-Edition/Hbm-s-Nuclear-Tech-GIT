@@ -1,12 +1,11 @@
 package com.hbm.inventory.fluid.tank;
 
-import java.util.Random;
-
 import com.hbm.inventory.fluid.Fluids;
-
 import com.hbm.items.tool.ItemFluidContainerInfinite;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
+
+import java.util.Random;
 
 public class FluidLoaderInfinite extends FluidLoadingHandler {
 	

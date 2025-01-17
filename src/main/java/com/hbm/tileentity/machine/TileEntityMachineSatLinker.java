@@ -2,7 +2,6 @@ package com.hbm.tileentity.machine;
 
 import com.hbm.items.ISatChip;
 import com.hbm.items.machine.ItemSatChip;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

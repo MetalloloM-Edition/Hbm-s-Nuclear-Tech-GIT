@@ -1,6 +1,5 @@
 package com.hbm.dim;
 
-import com.hbm.config.SpaceConfig;
 import net.minecraft.world.DimensionType;
 
 public class WorldProviderEarth extends WorldProviderCelestial {

@@ -6,7 +6,6 @@ import com.hbm.blocks.ITooltipProvider;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.forgefluid.ModForgeFluids;
 import com.hbm.lib.ForgeDirection;
-import com.hbm.main.MainRegistry;
 import com.hbm.tileentity.TileEntityProxyCombo;
 import com.hbm.tileentity.machine.TileEntityMachinePumpBase;
 import com.hbm.tileentity.machine.TileEntityMachinePumpElectric;

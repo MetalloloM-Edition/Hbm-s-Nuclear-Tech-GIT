@@ -1,8 +1,5 @@
 package com.hbm.tileentity.machine;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import api.hbm.energymk2.IEnergyProviderMK2;
 import com.google.common.collect.HashBiMap;
 import com.hbm.blocks.BlockDummyable;
@@ -16,7 +13,6 @@ import com.hbm.lib.Library;
 import com.hbm.packet.FluidTankPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -33,6 +29,9 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TileEntityMachineIGenerator extends TileEntityMachineBase implements ITickable, IEnergyProviderMK2, IFluidHandler, ITankPacketAcceptor {
 

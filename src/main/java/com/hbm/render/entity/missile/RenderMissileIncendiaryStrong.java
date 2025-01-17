@@ -1,28 +1,26 @@
 package com.hbm.render.entity.missile;
 
-import org.lwjgl.opengl.GL11;
-
-import com.hbm.render.tileentity.RenderLaunchPadTier1;
-import com.hbm.entity.missile.EntityMissileIncendiaryStrong;
+import com.hbm.entity.missile.EntityMissileTier2;
 import com.hbm.main.ResourceManager;
 import com.hbm.render.RenderHelper;
-
+import com.hbm.render.tileentity.RenderLaunchPadTier1;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import org.lwjgl.opengl.GL11;
 
-public class RenderMissileIncendiaryStrong extends Render<EntityMissileIncendiaryStrong> {
+public class RenderMissileIncendiaryStrong extends Render<EntityMissileTier2.EntityMissileIncendiaryStrong> {
 
-	public static final IRenderFactory<EntityMissileIncendiaryStrong> FACTORY = (RenderManager man) -> {return new RenderMissileIncendiaryStrong(man);};
+	public static final IRenderFactory<EntityMissileTier2.EntityMissileIncendiaryStrong> FACTORY = (RenderManager man) -> {return new RenderMissileIncendiaryStrong(man);};
 	
 	protected RenderMissileIncendiaryStrong(RenderManager renderManager) {
 		super(renderManager);
 	}
 	
 	@Override
-	public void doRender(EntityMissileIncendiaryStrong missile, double x, double y, double z, float entityYaw, float partialTicks) {
+	public void doRender(EntityMissileTier2.EntityMissileIncendiaryStrong missile, double x, double y, double z, float entityYaw, float partialTicks) {
 		GL11.glPushMatrix();
         GL11.glPushAttrib(GL11.GL_LIGHTING_BIT);
         GlStateManager.enableLighting();
@@ -44,7 +42,7 @@ public class RenderMissileIncendiaryStrong extends Render<EntityMissileIncendiar
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(EntityMissileIncendiaryStrong entity) {
+	protected ResourceLocation getEntityTexture(EntityMissileTier2.EntityMissileIncendiaryStrong entity) {
 		return ResourceManager.missileStrong_IN_tex;
 	}
 

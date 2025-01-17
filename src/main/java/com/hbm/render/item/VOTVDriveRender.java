@@ -4,7 +4,6 @@ import com.hbm.dim.SolarSystem;
 import com.hbm.lib.RefStrings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;

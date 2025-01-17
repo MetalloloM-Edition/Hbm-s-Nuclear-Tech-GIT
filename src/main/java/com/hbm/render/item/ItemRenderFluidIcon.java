@@ -1,14 +1,11 @@
 package com.hbm.render.item;
 
-import com.hbm.inventory.fluid.FluidType;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.items.machine.ItemFluidIcon;
 import com.hbm.render.RenderHelper;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 public class ItemRenderFluidIcon extends TEISRBase {
 

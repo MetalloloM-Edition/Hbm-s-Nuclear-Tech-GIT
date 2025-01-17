@@ -7,7 +7,6 @@ import com.hbm.items.IItemControlReceiver;
 import com.hbm.items.ModItems;
 import com.hbm.main.MainRegistry;
 import com.hbm.packet.PacketDispatcher;
-import com.hbm.packet.PlayerInformPacket;
 import com.hbm.packet.PlayerInformPacketLegacy;
 import com.hbm.tileentity.IGUIProvider;
 import com.hbm.util.I18nUtil;
@@ -23,9 +22,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -35,9 +32,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class ItemFluidIDMulti extends Item implements IItemFluidIdentifier, IItemControlReceiver, IGUIProvider {
 

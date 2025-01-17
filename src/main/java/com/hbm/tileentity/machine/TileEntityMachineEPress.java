@@ -1,5 +1,6 @@
 package com.hbm.tileentity.machine;
 
+import api.hbm.energymk2.IBatteryItem;
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.inventory.PressRecipes;
 import com.hbm.items.machine.ItemStamp;
@@ -10,8 +11,6 @@ import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.packet.TEPressPacket;
 import com.hbm.tileentity.TileEntityMachineBase;
-
-import api.hbm.energymk2.IBatteryItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

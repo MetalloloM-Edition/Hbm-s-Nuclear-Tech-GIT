@@ -3,16 +3,14 @@ package com.hbm.render.tileentity;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.inventory.fluid.trait.FT_Corrosive;
-import com.hbm.render.misc.DiamondPronter;
-import net.minecraft.client.renderer.RenderHelper;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.lib.RefStrings;
 import com.hbm.main.ResourceManager;
+import com.hbm.render.misc.DiamondPronter;
 import com.hbm.tileentity.machine.TileEntityMachineFluidTank;
-
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderFluidTank extends TileEntitySpecialRenderer<TileEntityMachineFluidTank> {
 	

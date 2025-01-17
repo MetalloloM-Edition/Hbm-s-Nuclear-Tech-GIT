@@ -155,6 +155,7 @@ public final class HBMSoundHandler {
 	public static SoundEvent closeC;
 	public static SoundEvent steamEngineOperate;
 
+	public static SoundEvent boltgun;
 	public static SoundEvent chungusOperate;
 	public static SoundEvent bang;
 	public static SoundEvent slice;
@@ -227,6 +228,10 @@ public final class HBMSoundHandler {
 	public static SoundEvent rbmk_explosion;
 	public static SoundEvent rbmk_az5_cover;
 	public static SoundEvent chungus_lever;
+	public static SoundEvent crateOpen;
+	public static SoundEvent crateClose;
+	public static SoundEvent storageOpen;
+	public static SoundEvent storageClose;
 	public static SoundEvent dflash;
 	public static SoundEvent cough;
 	public static SoundEvent ufoBeam;
@@ -430,6 +435,7 @@ public final class HBMSoundHandler {
 		openC = register("block.openc");
 		closeC = register("block.closec");
 		steamEngineOperate = register("block.steamEngineOperate");
+		boltgun = register("item.boltgun");
 		bang = register("weapon.bang");
 		slice = register("weapon.slice");
 		kaping = register("weapon.kapeng");
@@ -499,6 +505,10 @@ public final class HBMSoundHandler {
 		howard_reload = register("turret.howard_reload");
 		rbmk_explosion = register("block.rbmk_explosion");
 		rbmk_az5_cover = register("block.rbmk_az5_cover");
+		crateOpen = register("block.crateOpen");
+		crateClose = register("block.crateClose");
+		storageOpen = register("block.storageOpen");
+		storageClose = register("block.storageClose");
 		chungus_lever = register("block.chungusLever");
 		chungusOperate = register("block.chungusTurbineRunning");
 		dflash = register("weapon.dFlash");

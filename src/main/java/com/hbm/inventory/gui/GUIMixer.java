@@ -1,20 +1,18 @@
 package com.hbm.inventory.gui;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.hbm.inventory.MixerRecipes;
-import com.mojang.realmsclient.gui.ChatFormatting;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.inventory.container.ContainerMixer;
 import com.hbm.lib.RefStrings;
 import com.hbm.tileentity.machine.TileEntityMachineMixer;
-
+import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GUIMixer extends GuiInfoContainer {
 

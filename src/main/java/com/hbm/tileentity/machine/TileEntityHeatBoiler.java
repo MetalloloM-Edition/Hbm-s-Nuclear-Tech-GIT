@@ -1,6 +1,7 @@
 package com.hbm.tileentity.machine;
 
 import api.hbm.fluid.IFluidStandardTransceiver;
+import api.hbm.tile.IHeatSource;
 import com.hbm.blocks.BlockDummyable;
 import com.hbm.forgefluid.FFUtils;
 import com.hbm.forgefluid.ModForgeFluids;
@@ -12,8 +13,6 @@ import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
 import com.hbm.tileentity.INBTPacketReceiver;
-
-import api.hbm.tile.IHeatSource;
 import com.hbm.tileentity.TileEntityLoadedBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

@@ -11,7 +11,6 @@ import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityProxyCombo;
 import com.hbm.tileentity.machine.TileEntityHeaterOilburner;
 import com.hbm.util.I18nUtil;
-
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

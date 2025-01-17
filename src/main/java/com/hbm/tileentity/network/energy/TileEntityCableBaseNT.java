@@ -3,9 +3,8 @@ package com.hbm.tileentity.network.energy;
 import api.hbm.energymk2.IEnergyConductorMK2;
 import api.hbm.energymk2.Nodespace;
 import com.hbm.lib.ForgeDirection;
-
-import net.minecraft.util.ITickable;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
 
 public class TileEntityCableBaseNT extends TileEntity implements ITickable, IEnergyConductorMK2 {
 	

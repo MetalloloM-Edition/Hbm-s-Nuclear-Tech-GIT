@@ -6,7 +6,6 @@ import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.Library;
-
 import com.hbm.tileentity.network.TileEntityPipeBaseNT;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;

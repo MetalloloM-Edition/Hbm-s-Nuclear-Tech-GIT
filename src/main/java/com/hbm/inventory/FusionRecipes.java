@@ -3,7 +3,6 @@ package com.hbm.inventory;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ModItems;
-
 import net.minecraft.item.ItemStack;
 
 import java.util.HashMap;

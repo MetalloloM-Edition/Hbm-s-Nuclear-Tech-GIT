@@ -1,14 +1,11 @@
 package com.hbm.inventory.container;
 
 import com.hbm.inventory.SlotMachineOutput;
-import com.hbm.inventory.SlotMachineOutputVanilla;
 import com.hbm.inventory.SlotUpgrade;
 import com.hbm.tileentity.machine.TileEntityMachineAssemfac;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.SlotItemHandler;

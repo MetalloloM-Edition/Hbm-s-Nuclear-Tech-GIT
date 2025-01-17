@@ -1,19 +1,18 @@
 package com.hbm.inventory;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import com.hbm.inventory.fluid.FluidStack;
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
 import com.hbm.items.ItemEnums;
+import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemFluidIcon;
 import com.hbm.util.ItemStackUtil;
 import com.hbm.util.Tuple;
-import com.hbm.items.ModItems;
-
 import net.minecraft.item.ItemStack;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class RefineryRecipes {
 

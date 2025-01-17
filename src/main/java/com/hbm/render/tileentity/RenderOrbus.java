@@ -1,23 +1,15 @@
 package com.hbm.render.tileentity;
 
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.blocks.BlockDummyable;
-import com.hbm.forgefluid.FFUtils;
 import com.hbm.main.ResourceManager;
 import com.hbm.render.amlfrom1710.Vec3;
 import com.hbm.render.misc.BeamPronter;
 import com.hbm.render.misc.BeamPronter.EnumBeamType;
 import com.hbm.render.misc.BeamPronter.EnumWaveType;
 import com.hbm.tileentity.machine.TileEntityMachineOrbus;
-
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
+import org.lwjgl.opengl.GL11;
 
 public class RenderOrbus extends TileEntitySpecialRenderer<TileEntityMachineOrbus> {
 

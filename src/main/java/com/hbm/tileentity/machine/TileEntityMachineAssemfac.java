@@ -7,10 +7,8 @@ import com.hbm.inventory.UpgradeManager;
 import com.hbm.inventory.container.ContainerAssemfac;
 import com.hbm.inventory.gui.GUIAssemfac;
 import com.hbm.items.machine.ItemMachineUpgrade;
-import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.HBMSoundHandler;
-import com.hbm.main.MainRegistry;
 import com.hbm.packet.LoopedSoundPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.IGUIProvider;
@@ -38,7 +36,6 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 

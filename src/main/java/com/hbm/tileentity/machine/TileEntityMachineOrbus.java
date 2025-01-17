@@ -1,14 +1,9 @@
 package com.hbm.tileentity.machine;
 
-import com.hbm.forgefluid.FFUtils;
 import com.hbm.blocks.BlockDummyable;
-import com.hbm.inventory.fluid.FluidType;
 import com.hbm.lib.DirPos;
 import com.hbm.lib.ForgeDirection;
-
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

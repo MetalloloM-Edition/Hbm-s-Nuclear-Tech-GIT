@@ -1,18 +1,12 @@
 package com.hbm.inventory.fluid.trait;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 import com.hbm.handler.ArmorUtil;
 import com.hbm.util.ArmorRegistry;
-import com.hbm.util.I18nUtil;
 import com.hbm.util.ArmorRegistry.HazardClass;
-
+import com.hbm.util.I18nUtil;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,6 +16,11 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class FT_Toxin extends FluidTrait {
 	

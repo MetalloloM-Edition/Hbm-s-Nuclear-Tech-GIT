@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityTracker;
 import net.minecraft.entity.EntityTrackerEntry;
 import net.minecraft.network.play.server.SPacketEntityTeleport;
+import net.minecraft.util.IntHashMap;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -20,8 +21,9 @@ public class TrackerUtil {
     /** Grabs the tracker entry from the given entity */
     public static EntityTrackerEntry getTrackerEntry(WorldServer world, int entityId) {
         EntityTracker entitytracker = world.getEntityTracker();
-        Map<Integer, EntityTrackerEntry> entries = ObfuscationReflectionHelper.getPrivateValue(EntityTracker.class, entitytracker, "entries", "field_72794_c");
-        return entries.get(entityId);
+        IntHashMap entries = ObfuscationReflectionHelper.getPrivateValue(EntityTracker.class, entitytracker, "trackedEntityHashTable", "field_72794_c");
+        EntityTrackerEntry entry = (EntityTrackerEntry) entries.lookup(entityId);
+        return entry;
     }
     /** Force-teleports the given entity using the tracker, resetting the tick count to 0 to prevent movement during this tick */
     public static void sendTeleport(World world, Entity e) {

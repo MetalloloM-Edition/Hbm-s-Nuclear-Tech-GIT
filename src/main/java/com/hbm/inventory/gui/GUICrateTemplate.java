@@ -3,6 +3,7 @@ package com.hbm.inventory.gui;
 import com.hbm.inventory.container.ContainerCrateTemplate;
 import com.hbm.lib.RefStrings;
 import com.hbm.tileentity.machine.TileEntityCrateTemplate;
+import com.hbm.tileentity.machine.storage.TileEntityCrateBase;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
@@ -21,6 +22,21 @@ public class GUICrateTemplate extends GuiContainer {
 
         this.xSize = 176;
         this.ySize = 168;
+    }
+
+    public void initGui() {
+        super.initGui();
+        if (mc.player != null) {
+            TileEntityCrateBase.openInventory(mc.player);
+        }
+    }
+
+    @Override
+    public void onGuiClosed() {
+        super.onGuiClosed();
+        if (mc.player != null) {
+            TileEntityCrateBase.closeInventory(mc.player);
+        }
     }
 
     @Override

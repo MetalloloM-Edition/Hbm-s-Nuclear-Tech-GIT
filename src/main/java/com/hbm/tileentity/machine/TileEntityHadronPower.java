@@ -3,7 +3,6 @@ package com.hbm.tileentity.machine;
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityTickingBase;
-
 import net.minecraft.nbt.NBTTagCompound;
 
 public class TileEntityHadronPower extends TileEntityTickingBase implements IEnergyReceiverMK2 {

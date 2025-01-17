@@ -1,6 +1,5 @@
 package com.hbm.inventory.gui;
 
-import com.hbm.forgefluid.FFUtils;
 import com.hbm.inventory.container.ContainerLiquefactor;
 import com.hbm.lib.RefStrings;
 import com.hbm.tileentity.machine.oil.TileEntityMachineLiquefactor;

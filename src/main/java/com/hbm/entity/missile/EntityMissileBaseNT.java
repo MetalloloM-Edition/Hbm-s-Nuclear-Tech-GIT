@@ -8,6 +8,7 @@ import com.hbm.explosion.ExplosionLarge;
 import com.hbm.explosion.vanillant.ExplosionVNT;
 import com.hbm.explosion.vanillant.standard.*;
 import com.hbm.items.weapon.ItemMissile;
+import com.hbm.items.weapon.ItemMissileStandard;
 import com.hbm.main.MainRegistry;
 import com.hbm.render.amlfrom1710.Vec3;
 import com.hbm.util.TrackerUtil;
@@ -118,9 +119,9 @@ public abstract class EntityMissileBaseNT extends EntityThrowableInterp implemen
 	
 	@Override
 	public void onUpdate() {
-		this.lastTickPosX = this.posX;
-		this.lastTickPosY = this.posY;
-		this.lastTickPosZ = this.posZ;
+		this.prevPosX = this.posX;
+		this.prevPosY = this.posY;
+		this.prevPosZ = this.posZ;
 		super.onUpdate();
 		
 		if(velocity < 4) velocity += MathHelper.clamp(this.ticksExisted / 60D * 0.05D, 0, 0.05);
@@ -164,7 +165,7 @@ public abstract class EntityMissileBaseNT extends EntityThrowableInterp implemen
 			EntityTrackerEntry tracker = TrackerUtil.getTrackerEntry((WorldServer) world, this.getEntityId());
 			if(tracker != null){
 				// fuck you, mojang
-				float lastYaw = ObfuscationReflectionHelper.getPrivateValue(EntityTrackerEntry.class, tracker, "field_73127_g");
+				int lastYaw = ObfuscationReflectionHelper.getPrivateValue(EntityTrackerEntry.class, tracker, "field_73127_g");
 				lastYaw += 100;
 				ObfuscationReflectionHelper.setPrivateValue(EntityTrackerEntry.class, tracker, lastYaw, "field_73127_g");
 			}
@@ -363,20 +364,11 @@ public abstract class EntityMissileBaseNT extends EntityThrowableInterp implemen
 		}
 	}
 	
-	public void explodeStandard(float strength, int resolution, boolean fire) {
-		ExplosionVNT xnt = new ExplosionVNT(world, posX, posY, posZ, strength);
-		xnt.setBlockAllocator(new BlockAllocatorStandard(resolution));
-		xnt.setBlockProcessor(new BlockProcessorStandard().setNoDrop().withBlockEffect(fire ? new BlockMutatorFire() : null));
-		xnt.setEntityProcessor(new EntityProcessorCross(7.5D).withRangeMod(2));
-		xnt.setPlayerProcessor(new PlayerProcessorStandard());
-		xnt.explode();
-	}
-	
 	@Override
 	public String getUnlocalizedName() {
 		ItemStack item = this.getMissileItemForInfo();
-		if(item != null && item.getItem() instanceof ItemMissile) {
-			ItemMissile missile = (ItemMissile) item.getItem();
+		if(item != null && item.getItem() instanceof ItemMissileStandard) {
+			ItemMissileStandard missile = (ItemMissileStandard) item.getItem();
 			switch(missile.tier) {
 			case TIER0: return "radar.target.tier0";
 			case TIER1: return "radar.target.tier1";
@@ -393,8 +385,8 @@ public abstract class EntityMissileBaseNT extends EntityThrowableInterp implemen
 	@Override
 	public int getBlipLevel() {
 		ItemStack item = this.getMissileItemForInfo();
-		if(item != null && item.getItem() instanceof ItemMissile) {
-			ItemMissile missile = (ItemMissile) item.getItem();
+		if(item != null && item.getItem() instanceof ItemMissileStandard) {
+			ItemMissileStandard missile = (ItemMissileStandard) item.getItem();
 			switch(missile.tier) {
 			case TIER0: return IRadarDetectableNT.TIER0;
 			case TIER1: return IRadarDetectableNT.TIER1;

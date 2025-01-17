@@ -1,8 +1,5 @@
 package com.hbm.tileentity.machine;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.entity.mob.EntityCyberCrab;
@@ -18,7 +15,6 @@ import com.hbm.packet.PacketDispatcher;
 import com.hbm.packet.TETeslaPacket;
 import com.hbm.render.amlfrom1710.Vec3;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -34,6 +30,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TileEntityTesla extends TileEntityMachineBase implements ITickable, IEnergyReceiverMK2 {
 

@@ -1,20 +1,13 @@
 package com.hbm.blocks.generic;
 
-import java.util.List;
-import java.util.Random;
-
 import com.hbm.blocks.ModBlocks;
+import com.hbm.config.MachineConfig;
 import com.hbm.items.ModItems;
 import com.hbm.items.tool.ItemLock;
 import com.hbm.lib.InventoryHelper;
 import com.hbm.lib.Library;
 import com.hbm.main.MainRegistry;
-import com.hbm.config.MachineConfig;
 import com.hbm.tileentity.machine.*;
-
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
@@ -24,23 +17,23 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockStorageCrate extends BlockContainer {
 
@@ -99,12 +92,12 @@ public class BlockStorageCrate extends BlockContainer {
 	public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest){
 
 		if(!player.capabilities.isCreativeMode && !world.isRemote && willHarvest) {
-			
+
 			ItemStack drop = new ItemStack(this);
 			TileEntity te = world.getTileEntity(pos);
-			
+
 			NBTTagCompound nbt = new NBTTagCompound();
-			
+
 			if(te != null) {
 				IItemHandler inventory;
 				if(te instanceof TileEntitySafe){
@@ -116,30 +109,30 @@ public class BlockStorageCrate extends BlockContainer {
 				}
 
 				for(int i = 0; i < inventory.getSlots(); i++) {
-					
+
 					ItemStack stack = inventory.getStackInSlot(i);
 					if(stack.isEmpty())
 						continue;
-					
+
 					NBTTagCompound slot = new NBTTagCompound();
 					stack.writeToNBT(slot);
 					nbt.setTag("slot" + i, slot);
 				}
 			}
-			
+
 			if(te instanceof TileEntityLockableBase) {
 				TileEntityLockableBase lockable = (TileEntityLockableBase) te;
-				
+
 				if(lockable.isLocked()) {
 					nbt.setInteger("lock", lockable.getPins());
 					nbt.setDouble("lockMod", lockable.getMod());
 				}
 			}
-			
-			
+
+
 			if(!nbt.hasNoTags()) {
 				drop.setTagCompound(nbt);
-								
+
 				if(nbt.toString().length() > MachineConfig.crateByteSize * 1000) {
 					player.sendMessage(new TextComponentString("§cWarning: Container NBT exceeds "+MachineConfig.crateByteSize+"kB, contents will be ejected!"));
 					InventoryHelper.dropInventoryItems(world, pos, world.getTileEntity(pos));
@@ -147,14 +140,14 @@ public class BlockStorageCrate extends BlockContainer {
 					return world.setBlockToAir(pos);
 				}
 			}
-			
+
 			InventoryHelper.spawnItemStack(world, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop);
 		}
 
 		this.dropInv = false;
 		boolean flag = world.setBlockToAir(pos);
 		this.dropInv = true;
-		
+
 		return flag;
 	}
 
@@ -162,7 +155,7 @@ public class BlockStorageCrate extends BlockContainer {
 	public Block setSoundType(SoundType sound){
 		return super.setSoundType(sound);
 	}
-	
+
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state){
 		if(this.dropInv){
@@ -219,10 +212,10 @@ public class BlockStorageCrate extends BlockContainer {
 			for(int i = 0; i < inventory.getSlots(); i++) {
 				inventory.insertItem(i, new ItemStack(nbt.getCompoundTag("slot" + i)), false);
 			}
-			
+
 			if(te instanceof TileEntityLockableBase) {
 				TileEntityLockableBase lockable = (TileEntityLockableBase) te;
-				
+
 				if(nbt.hasKey("lock")) {
 					lockable.setPins(nbt.getInteger("lock"));
 					lockable.setMod(nbt.getDouble("lockMod"));
@@ -297,7 +290,7 @@ public class BlockStorageCrate extends BlockContainer {
 			}
 			float percent = Library.roundFloat(slotCount * 100F/totalSlots, 1);
 			String color = "§e";
-			String color2 = "§6"; 
+			String color2 = "§6";
 			if(percent >= 75){
 				color = "§c";
 				color2 = "§4";

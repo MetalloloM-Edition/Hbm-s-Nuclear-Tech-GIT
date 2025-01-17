@@ -2,16 +2,14 @@ package com.hbm.render.tileentity;
 
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
-import com.hbm.render.amlfrom1710.Tessellator;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.main.ResourceManager;
+import com.hbm.render.amlfrom1710.Tessellator;
 import com.hbm.render.misc.DiamondPronter;
 import com.hbm.render.misc.EnumSymbol;
 import com.hbm.tileentity.machine.TileEntityMachineBAT9000;
-
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import org.lwjgl.opengl.GL11;
 
 public class RenderBAT9000 extends TileEntitySpecialRenderer<TileEntityMachineBAT9000> {
 

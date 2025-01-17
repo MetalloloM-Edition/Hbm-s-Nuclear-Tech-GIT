@@ -805,9 +805,9 @@ public class GuiHandler implements IGuiHandler {
 			return null;
 		case ModBlocks.guiID_crate_template:
 			if(entity instanceof TileEntityCrateTemplate) {
-			return new GUICrateTemplate(player.inventory, (TileEntityCrateTemplate) entity);
+				return new GUICrateTemplate(player.inventory, (TileEntityCrateTemplate) entity);
 			}
-		return null;
+			return null;
 		case ModBlocks.guiID_crate_desh:
 			if(entity instanceof TileEntityCrateDesh) {
 				return new GUICrateDesh(player.inventory, (TileEntityCrateDesh) entity);

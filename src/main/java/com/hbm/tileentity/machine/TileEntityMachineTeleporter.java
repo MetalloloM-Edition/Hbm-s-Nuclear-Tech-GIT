@@ -1,7 +1,5 @@
 package com.hbm.tileentity.machine;
 
-import java.util.List;
-
 import api.hbm.energymk2.IEnergyReceiverMK2;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.lib.ModDamageSource;
@@ -9,17 +7,18 @@ import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.INBTPacketReceiver;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
+
+import java.util.List;
 
 public class TileEntityMachineTeleporter extends TileEntityLoadedBase implements ITickable, IEnergyReceiverMK2, INBTPacketReceiver {
 

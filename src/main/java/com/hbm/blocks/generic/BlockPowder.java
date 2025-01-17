@@ -1,18 +1,11 @@
 package com.hbm.blocks.generic;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import com.hbm.blocks.BlockDummyable;
 import com.hbm.blocks.ModBlocks;
-import com.hbm.capability.HbmLivingProps;
-import com.hbm.capability.HbmLivingProps.ContaminationEffect;
 import com.hbm.interfaces.IItemHazard;
-import com.hbm.util.ContaminationUtil;
 import com.hbm.items.ModItems;
 import com.hbm.modules.ItemHazardModule;
 import com.hbm.potion.HbmPotion;
-
+import com.hbm.util.ContaminationUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -22,7 +15,6 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
@@ -31,10 +23,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class BlockPowder extends Block implements IItemHazard {
-	
+
 	public static final PropertyInteger META = PropertyInteger.create("meta", 0, 6);
-	
+
 	ItemHazardModule module;
 
 	public BlockPowder(Material mat, SoundType soundType, String s) {
@@ -44,7 +38,7 @@ public class BlockPowder extends Block implements IItemHazard {
 		this.setSoundType(soundType);
 		this.setHarvestLevel("shovel", 0);
 		this.module = new ItemHazardModule();
-		
+
 		ModBlocks.ALL_BLOCKS.add(this);
 	}
 
@@ -52,22 +46,22 @@ public class BlockPowder extends Block implements IItemHazard {
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
 		return new AxisAlignedBB(0, 0, 0, 1, 0.125, 1);
 	}
-	
+
 	@Override
 	public boolean isOpaqueCube(IBlockState state){
 		return false;
 	}
-	
+
 	@Override
 	public boolean isFullBlock(IBlockState state){
 		return false;
 	}
-	
+
 	@Override
 	public boolean isFullCube(IBlockState state){
 		return false;
 	}
-	
+
 	@Override
 	public boolean canEntitySpawn(IBlockState state, Entity entityIn){
 		return ContaminationUtil.isRadImmune(entityIn);
@@ -80,14 +74,14 @@ public class BlockPowder extends Block implements IItemHazard {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public boolean canPlaceBlockAt(World world, BlockPos pos){
 		IBlockState state = world.getBlockState(pos.down());
 		Block block = state.getBlock();
 		return block != Blocks.ICE && block != Blocks.PACKED_ICE ? (block.isLeaves(state, world, pos.down()) ? true : (block == this && (state.getValue(META) & 7) == 7 ? true : state.isOpaqueCube() && state.getMaterial().blocksMovement())) : false;
 	}
-	
+
 	@Override
 	public void onEntityWalk(World world, BlockPos pos, Entity entity){
 		if(!world.isRemote && entity instanceof EntityLivingBase) {
@@ -106,22 +100,22 @@ public class BlockPowder extends Block implements IItemHazard {
 	public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos){
 		return true;
 	}
-	
+
 	@Override
 	public ItemHazardModule getModule() {
 		return module;
 	}
-	
+
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, new IProperty[]{META});
 	}
-	
+
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return state.getValue(META);
 	}
-	
+
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		return this.getDefaultState().withProperty(META, meta);

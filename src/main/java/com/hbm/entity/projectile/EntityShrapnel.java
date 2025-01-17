@@ -112,4 +112,7 @@ public class EntityShrapnel extends EntityThrowable {
     public void setVolcano(boolean b) {
 		this.dataManager.set(TRAIL, (byte) (b ? 2 : 0));
 	}
+	public void setWatz(boolean b) {
+		this.dataManager.set(TRAIL, (byte) (b ? 3 : 0));
+	}
 }

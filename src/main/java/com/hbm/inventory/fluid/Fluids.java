@@ -1,5 +1,25 @@
 package com.hbm.inventory.fluid;
 
+import com.google.common.collect.HashBiMap;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonWriter;
+import com.hbm.handler.pollution.PollutionHandler;
+import com.hbm.inventory.fluid.trait.*;
+import com.hbm.inventory.fluid.trait.FT_Combustible.FuelGrade;
+import com.hbm.inventory.fluid.trait.FT_Coolable.CoolingType;
+import com.hbm.inventory.fluid.trait.FT_Heatable.HeatingType;
+import com.hbm.inventory.fluid.trait.FT_Toxin.ToxinDirectDamage;
+import com.hbm.inventory.fluid.trait.FT_Toxin.ToxinEffects;
+import com.hbm.inventory.fluid.trait.FluidTraitSimple.*;
+import com.hbm.lib.ModDamageSource;
+import com.hbm.potion.HbmPotion;
+import com.hbm.render.misc.EnumSymbol;
+import com.hbm.util.ArmorRegistry.HazardClass;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,26 +28,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
-
-import com.google.common.collect.HashBiMap;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonWriter;
-import com.hbm.handler.pollution.PollutionHandler;
-import com.hbm.inventory.fluid.trait.*;
-import com.hbm.inventory.fluid.trait.FluidTraitSimple.*;
-import com.hbm.lib.ModDamageSource;
-import com.hbm.potion.HbmPotion;
-import com.hbm.inventory.fluid.trait.FT_Combustible.FuelGrade;
-import com.hbm.inventory.fluid.trait.FT_Coolable.CoolingType;
-import com.hbm.inventory.fluid.trait.FT_Heatable.HeatingType;
-import com.hbm.inventory.fluid.trait.FT_Toxin.*;
-import com.hbm.render.misc.EnumSymbol;
-import com.hbm.util.ArmorRegistry.HazardClass;
-
-import net.minecraft.init.MobEffects;
-import net.minecraft.potion.PotionEffect;
 
 import static com.hbm.main.MainRegistry.proxy;
 

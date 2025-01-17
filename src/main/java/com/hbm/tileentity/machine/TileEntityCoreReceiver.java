@@ -6,7 +6,6 @@ import com.hbm.interfaces.ILaserable;
 import com.hbm.interfaces.ITankPacketAcceptor;
 import com.hbm.lib.ForgeDirection;
 import com.hbm.tileentity.TileEntityMachineBase;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

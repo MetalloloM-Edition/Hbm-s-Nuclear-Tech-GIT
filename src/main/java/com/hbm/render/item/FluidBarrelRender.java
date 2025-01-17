@@ -1,18 +1,12 @@
 package com.hbm.render.item;
 
 import com.hbm.inventory.fluid.Fluids;
-import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemFluidTank;
-import org.lwjgl.opengl.GL11;
-
 import com.hbm.render.RenderHelper;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 public class FluidBarrelRender extends TEISRBase {
 	public static final double HALF_A_PIXEL = 0.03125;

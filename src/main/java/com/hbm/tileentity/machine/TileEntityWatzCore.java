@@ -1,7 +1,5 @@
 package com.hbm.tileentity.machine;
 
-import java.util.Random;
-
 import api.hbm.energymk2.IEnergyProviderMK2;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.config.BombConfig;
@@ -12,14 +10,13 @@ import com.hbm.interfaces.ITankPacketAcceptor;
 import com.hbm.items.ModItems;
 import com.hbm.items.machine.ItemCapacitor;
 import com.hbm.items.special.WatzFuel;
-import com.hbm.lib.Library;
 import com.hbm.lib.ForgeDirection;
-import com.hbm.world.Watz;
+import com.hbm.lib.Library;
 import com.hbm.packet.AuxElectricityPacket;
 import com.hbm.packet.FluidTankPacket;
 import com.hbm.packet.PacketDispatcher;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
+import com.hbm.world.Watz;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -40,6 +37,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 import net.minecraftforge.items.ItemStackHandler;
+
+import java.util.Random;
 
 public class TileEntityWatzCore extends TileEntityLoadedBase implements ITickable, IEnergyProviderMK2, IFluidHandler, ITankPacketAcceptor {
 

@@ -1,33 +1,31 @@
 package com.hbm.inventory.fluid.tank;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import com.hbm.inventory.fluid.FluidType;
 import com.hbm.inventory.fluid.Fluids;
+import com.hbm.inventory.gui.GuiInfoContainer;
+import com.hbm.items.ModItems;
 import com.hbm.items.machine.IItemFluidIdentifier;
+import com.hbm.packet.PacketDispatcher;
 import com.hbm.packet.TEFluidPacket;
 import com.mojang.realmsclient.gui.ChatFormatting;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.IItemHandler;
 import org.lwjgl.opengl.GL11;
 
-import com.hbm.inventory.gui.GuiInfoContainer;
-import com.hbm.items.ModItems;
-import com.hbm.packet.PacketDispatcher;
-
-import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class FluidTankNTM {
 

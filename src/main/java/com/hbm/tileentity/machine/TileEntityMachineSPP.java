@@ -4,7 +4,6 @@ import api.hbm.energymk2.IEnergyProviderMK2;
 import com.hbm.blocks.ModBlocks;
 import com.hbm.lib.Library;
 import com.hbm.tileentity.TileEntityLoadedBase;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;

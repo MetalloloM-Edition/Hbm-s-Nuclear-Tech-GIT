@@ -583,6 +583,7 @@ public class ModEventHandlerClient {
 		swapModels(ModItems.ore_bedrock_perfect, reg);
 		swapModelsNoGui(ModItems.bedrock_ore, reg);
 		swapModels(ModItems.detonator_laser, reg);
+		swapModels(ModItems.boltgun, reg);
 
 		swapModels(ModItems.forge_fluid_identifier, reg);
 		swapModels(ModItems.fluid_barrel_full, reg);
