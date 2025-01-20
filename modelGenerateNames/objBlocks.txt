@@ -3,3 +3,5 @@ orbital_station
 orbital_station_port
 launch_pad_large
 watz
+condenser_powered
+Industrial_boiler

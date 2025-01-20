@@ -493,6 +493,7 @@ public class MainRegistry {
 		GameRegistry.registerTileEntity(TileEntityMachineOreSlopper.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_ore_slopper"));
 		GameRegistry.registerTileEntity(TileEntityMachineBoiler.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_boiler"));
 		GameRegistry.registerTileEntity(TileEntityHeatBoiler.class, new ResourceLocation(RefStrings.MODID, "tileentity_heat_boiler"));
+		GameRegistry.registerTileEntity(TileEntityHeatBoilerIndustrial.class, new ResourceLocation(RefStrings.MODID, "tileentity_heat_boiler_industrial"));
 		GameRegistry.registerTileEntity(TileEntityMachineBoilerElectric.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_boiler_electric"));
 		GameRegistry.registerTileEntity(TileEntityMachineBoilerRTG.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_boiler_rtg"));
 		GameRegistry.registerTileEntity(TileEntityMachineEPress.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_epress"));
@@ -691,6 +692,7 @@ public class MainRegistry {
 		GameRegistry.registerTileEntity(TileEntityMachineFractionTower.class, new ResourceLocation(RefStrings.MODID, "tileentity_machine_frac_tower"));
 		GameRegistry.registerTileEntity(TileEntityTowerSmall.class, new ResourceLocation(RefStrings.MODID, "tileentity_tower_small"));
 		GameRegistry.registerTileEntity(TileEntityTowerLarge.class, new ResourceLocation(RefStrings.MODID, "tileentity_tower_large"));
+		GameRegistry.registerTileEntity(TileEntityCondenserPowered.class, new ResourceLocation(RefStrings.MODID, "tileentity_condenser_powered"));
 		GameRegistry.registerTileEntity(TileEntitySILEX.class, new ResourceLocation(RefStrings.MODID, "tileentity_silex"));
 		GameRegistry.registerTileEntity(TileEntityFEL.class, new ResourceLocation(RefStrings.MODID, "tileentity_fel"));
 		GameRegistry.registerTileEntity(TileEntityHeaterFirebox.class, new ResourceLocation(RefStrings.MODID, "tileentity_heater_firebox"));
