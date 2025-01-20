@@ -666,6 +666,7 @@ public class ClientProxy extends ServerProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySolarBoiler.class, new RenderSolarBoiler());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOrbitalStation.class, new RenderOrbitalStation());
     	ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHeatBoiler.class, new RenderHeatBoiler());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHeatBoilerIndustrial.class, new RenderIndustrialBoiler());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySolarMirror.class, new RenderSolarMirror());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMachineIGenerator.class, new RenderIGenerator());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySiloHatch.class, new RenderSiloHatch());
@@ -712,6 +713,7 @@ public class ClientProxy extends ServerProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMachineFractionTower.class, new RenderFractionTower());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTowerSmall.class, new RenderSmallTower());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTowerLarge.class, new RenderLargeTower());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityCondenserPowered.class, new RenderCondenser());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySILEX.class, new RenderSILEX());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityFEL.class, new RenderFEL());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityHeaterFirebox.class, new RenderFirebox());

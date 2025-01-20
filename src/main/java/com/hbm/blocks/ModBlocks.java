@@ -1,8 +1,5 @@
 package com.hbm.blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.hbm.blocks.bomb.*;
 import com.hbm.blocks.gas.*;
 import com.hbm.blocks.generic.*;
@@ -12,55 +9,18 @@ import com.hbm.blocks.machine.pile.BlockGraphite;
 import com.hbm.blocks.machine.pile.BlockGraphiteFuel;
 import com.hbm.blocks.machine.pile.BlockGraphiteRod;
 import com.hbm.blocks.machine.pile.BlockGraphiteSource;
-import com.hbm.blocks.machine.rbmk.RBMKAbsorber;
-import com.hbm.blocks.machine.rbmk.RBMKBlank;
-import com.hbm.blocks.machine.rbmk.RBMKBoiler;
-import com.hbm.blocks.machine.rbmk.RBMKConsole;
-import com.hbm.blocks.machine.rbmk.RBMKControl;
-import com.hbm.blocks.machine.rbmk.RBMKControlAuto;
-import com.hbm.blocks.machine.rbmk.RBMKDebris;
-import com.hbm.blocks.machine.rbmk.RBMKDebrisBurning;
-import com.hbm.blocks.machine.rbmk.RBMKDebrisDigamma;
-import com.hbm.blocks.machine.rbmk.RBMKDebrisRadiating;
-import com.hbm.blocks.machine.rbmk.RBMKInlet;
-import com.hbm.blocks.machine.rbmk.RBMKModerator;
-import com.hbm.blocks.machine.rbmk.RBMKOutgasser;
-import com.hbm.blocks.machine.rbmk.RBMKOutlet;
-import com.hbm.blocks.machine.rbmk.RBMKReflector;
-import com.hbm.blocks.machine.rbmk.RBMKRod;
-import com.hbm.blocks.machine.rbmk.RBMKRodReaSim;
-import com.hbm.blocks.machine.rbmk.RBMKStorage;
-import com.hbm.blocks.machine.rbmk.RBMKCooler;
-import com.hbm.blocks.machine.rbmk.RBMKHeater;
-import com.hbm.blocks.machine.rbmk.RBMKCraneConsole;
+import com.hbm.blocks.machine.rbmk.*;
 import com.hbm.blocks.network.*;
-import com.hbm.blocks.network.energy.BlockCable;
-import com.hbm.blocks.network.energy.CableSwitch;
-import com.hbm.blocks.network.energy.CableDiode;
-import com.hbm.blocks.network.energy.CableDetector;
-import com.hbm.blocks.network.energy.PowerDetector;
-import com.hbm.blocks.network.energy.PylonRedWire;
-import com.hbm.blocks.network.energy.PylonLarge;
-import com.hbm.blocks.network.energy.Substation;
-import com.hbm.blocks.network.energy.WireCoated;
-import com.hbm.blocks.network.energy.WireCoatedRadResistant;
-import com.hbm.blocks.network.energy.BlockConverterRfHe;
-import com.hbm.blocks.network.energy.BlockConverterHeRf;
-import com.hbm.blocks.network.energy.BlockCableGauge;
+import com.hbm.blocks.network.energy.*;
 import com.hbm.blocks.test.KeypadTest;
 import com.hbm.blocks.test.TestObjTester;
 import com.hbm.blocks.test.TestRender;
 import com.hbm.blocks.turret.*;
-import com.hbm.forgefluid.ModForgeFluids;
-import com.hbm.interfaces.Spaghetti;
 import com.hbm.items.special.ItemHazard;
 import com.hbm.lib.HBMSoundHandler;
-import com.hbm.lib.RefStrings;
 import com.hbm.main.MainRegistry;
 import com.hbm.tileentity.DoorDecl;
-
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -69,8 +29,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.SoundEvent;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModBlocks {
 
@@ -870,9 +832,11 @@ public class ModBlocks {
 	public static final int guiID_crate_tungsten = 107;
 	public static final int guiID_crate_desh = 128;
 	public static final int guiID_crate_template = 136;
-	public static final int guiID_mass_storage = 140;
 	public static final int guiID_safe = 70;
 	public static final Block mass_storage = new BlockMassStorage(Material.IRON, "mass_storage").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block mass_storage_wood = new BlockMassStorage(Material.IRON, "mass_storage_wood").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block mass_storage_iron = new BlockMassStorage(Material.IRON, "mass_storage_iron").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block mass_storage_desh = new BlockMassStorage(Material.IRON, "mass_storage_desh").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 
 
 	public static final Block machine_keyforge = new MachineKeyForge(Material.IRON, "machine_keyforge").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.consumableTab);
@@ -1018,7 +982,9 @@ public class ModBlocks {
 	public static final Block machine_condenser = new MachineCondenser(Material.IRON, "machine_condenser").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block machine_tower_small = new MachineTowerSmall(Material.IRON, "machine_tower_small").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block machine_tower_large = new MachineTowerLarge(Material.IRON, "machine_tower_large").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
-	
+	public static final Block machine_condenser_powered = new MachineCondenserPowered(Material.IRON, "machine_condenser_powered").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+
+
 	public static final Block machine_deuterium_extractor = new MachineDeuteriumExtractor(Material.IRON, "machine_deuterium_extractor").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block machine_deuterium_tower = new DeuteriumTower(Material.IRON, "machine_deuterium_tower").setHardness(10.0F).setResistance(20.0F).setCreativeTab(MainRegistry.machineTab);
 
@@ -1068,7 +1034,7 @@ public class ModBlocks {
 	public static final int guiID_machine_selenium = 63;
 	
 	public static final Block launch_pad = new LaunchPad(Material.IRON, "launch_pad").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
-	public static final Block launch_pad_large = new LaunchPadLarge(Material.IRON, "launch_pad_large").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
+	public static final Block launch_pad_large = new LaunchPadLarge("launch_pad_large", Material.IRON).setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
 	public static final int guiID_launch_pad = 19;
 	
 	public static final Block machine_centrifuge = new MachineCentrifuge(Material.IRON, "machine_centrifuge").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
@@ -1186,6 +1152,8 @@ public class ModBlocks {
 	public static final Block furnace_steel = new FurnaceSteel(Material.IRON, "furnace_steel").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block machine_sawmill = new MachineSawmill("machine_sawmill").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block heat_boiler = new HeatBoiler(Material.IRON, "heat_boiler").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block heat_boiler_industrial = new MachineHeatBoilerIndustrial(Material.IRON, "heat_boiler_industrial").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	//For some fucking reason i can't just rename it to HeatBoilerIndustrial, it makes a FOLDER in the JAVA CLASS, HOW
 	//Misc
 	public static final Block radsensor = new RadSensor(Material.IRON, "radsensor").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	
@@ -1254,10 +1222,9 @@ public class ModBlocks {
 	public static final Block watz_hatch = new WatzHatch(Material.IRON, "watz_hatch").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block watz_conductor = new BlockCableConnect(Material.IRON, "watz_conductor").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block watz_core = new WatzCore(Material.IRON, "watz_core").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block watz = new Watz("watz").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final int guiID_watz_multiblock = 32;
-	public static final Block watz = new Watz(Material.IRON, "watz").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
-
-
+	
 	//Fwatz stuff
 	public static final Block fwatz_conductor = new BlockReactor(Material.IRON, "fwatz_conductor").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block fwatz_cooler = new BlockReactor(Material.IRON, "fwatz_cooler").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
