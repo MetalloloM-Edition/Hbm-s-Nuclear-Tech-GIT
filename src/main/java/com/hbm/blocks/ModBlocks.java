@@ -115,6 +115,9 @@ public class ModBlocks {
 	public static final Block tile_lab_cracked = new BlockClean(Material.ROCK, "tile_lab_cracked").setSoundType(SoundType.GLASS).setCreativeTab(MainRegistry.blockTab).setHardness(1.0F).setResistance(20.0F);
 	public static final Block tile_lab_broken = new BlockOutgas(true, 40, true, "tile_lab_broken").addAsbestos(6).toBlock().setCreativeTab(MainRegistry.blockTab).setHardness(1.0F).setResistance(20.0F);
 
+	public static final Block vinyl_tile_large = new BlockBase(Material.ROCK, "vilyl_tile_large").setCreativeTab(MainRegistry.blockTab).setHardness(10.0F).setResistance(60.0F);
+	public static final Block vinyl_tile_small = new BlockBase(Material.ROCK, "vilyl_tile_small").setCreativeTab(MainRegistry.blockTab).setHardness(10.0F).setResistance(60.0F);
+
 	//stairs
 	public static final Block reinforced_stone_stairs = new BlockGenericStairs(reinforced_stone.getDefaultState(), "reinforced_stone_stairs").setCreativeTab(MainRegistry.blockTab).setHardness(15.0F).setResistance(2250.0F);
 	public static final Block brick_concrete_stairs = new BlockGenericStairs(brick_concrete.getDefaultState(), "brick_concrete_stairs").setCreativeTab(MainRegistry.blockTab).setHardness(15.0F).setResistance(4500.0F);
@@ -665,8 +668,8 @@ public class ModBlocks {
 	public static final Block det_bale = new DetCord(Material.IRON, "det_bale").setCreativeTab(MainRegistry.nukeTab).setHardness(0.1F).setResistance(0.0F);
 	public static final Block red_barrel = new RedBarrel(Material.IRON, "red_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
 	public static final Block pink_barrel = new RedBarrel(Material.IRON, "pink_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
-	public static final Block yellow_barrel = new YellowBarrel(Material.IRON, "yellow_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
-	public static final Block vitrified_barrel = new YellowBarrel(Material.IRON, "vitrified_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
+	public static final Block yellow_barrel = new YellowBarrel(Material.IRON, "yellow_barrel").addRadiation(150).toBlock().setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
+	public static final Block vitrified_barrel = new YellowBarrel(Material.IRON, "vitrified_barrel").addRadiation(10).toBlock().setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
 	public static final Block lox_barrel = new RedBarrel(Material.IRON, "lox_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
 	public static final Block taint_barrel = new RedBarrel(Material.IRON, "taint_barrel").setCreativeTab(MainRegistry.nukeTab).setHardness(0.5F).setResistance(2.5F);
 	
@@ -1034,7 +1037,7 @@ public class ModBlocks {
 	public static final int guiID_machine_selenium = 63;
 	
 	public static final Block launch_pad = new LaunchPad(Material.IRON, "launch_pad").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
-	public static final Block launch_pad_large = new LaunchPadLarge("launch_pad_large", Material.IRON).setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
+	public static final Block launch_pad_large = new LaunchPadLarge(Material.IRON,"launch_pad_large").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.missileTab);
 	public static final int guiID_launch_pad = 19;
 	
 	public static final Block machine_centrifuge = new MachineCentrifuge(Material.IRON, "machine_centrifuge").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
@@ -1222,7 +1225,7 @@ public class ModBlocks {
 	public static final Block watz_hatch = new WatzHatch(Material.IRON, "watz_hatch").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block watz_conductor = new BlockCableConnect(Material.IRON, "watz_conductor").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final Block watz_core = new WatzCore(Material.IRON, "watz_core").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
-	public static final Block watz = new Watz("watz").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
+	public static final Block watz = new Watz(Material.IRON, "watz").setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.machineTab);
 	public static final int guiID_watz_multiblock = 32;
 	
 	//Fwatz stuff
@@ -1331,7 +1334,7 @@ public class ModBlocks {
 	public static final Block gas_coal = new BlockGasCoal("gas_coal").setCreativeTab(MainRegistry.resourceTab);
 	public static final Block gas_flammable = new BlockGasFlammable("gas_flammable").setCreativeTab(MainRegistry.resourceTab);
 	public static final Block gas_explosive = new BlockGasExplosive("gas_explosive").setCreativeTab(MainRegistry.resourceTab);
-	public static final Block ancient_scrap = new BlockOutgas(true, 1, true, true, "ancient_scrap").addRadiation(150F).toBlock().setCreativeTab(MainRegistry.resourceTab).setHardness(100.0F).setResistance(6000.0F);
+	public static final Block ancient_scrap = new BlockOutgas(true, 1, true, true, "ancient_scrap").addRadiation(500F).toBlock().setCreativeTab(MainRegistry.resourceTab).setHardness(100.0F).setResistance(6000.0F);
 	
 	
 	public static final Block railgun_plasma = new RailgunPlasma(Material.IRON, "railgun_plasma").setSoundType(SoundType.METAL).setHardness(5.0F).setResistance(10.0F).setCreativeTab(MainRegistry.weaponTab);

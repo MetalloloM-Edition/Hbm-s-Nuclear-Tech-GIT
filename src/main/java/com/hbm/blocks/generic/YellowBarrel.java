@@ -2,6 +2,8 @@ package com.hbm.blocks.generic;
 
 import com.hbm.blocks.ModBlocks;
 import com.hbm.explosion.ExplosionNukeGeneric;
+import com.hbm.interfaces.IItemHazard;
+import com.hbm.modules.ItemHazardModule;
 import com.hbm.saveddata.RadiationSavedData;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,7 +21,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class YellowBarrel extends Block {
+public class YellowBarrel extends Block implements IItemHazard  {
+
+	ItemHazardModule module;
 
 	public static final AxisAlignedBB BARREL_BB = new AxisAlignedBB(2 * 0.0625F, 0.0F, 2 * 0.0625F, 14 * 0.0625F, 1.0F, 14 * 0.0625F);
 	Random rand = new Random();
@@ -28,6 +32,7 @@ public class YellowBarrel extends Block {
 		super(materialIn);
 		this.setUnlocalizedName(s);
 		this.setRegistryName(s);
+		this.module = new ItemHazardModule();
 
 		ModBlocks.ALL_BLOCKS.add(this);
 	}
@@ -70,6 +75,11 @@ public class YellowBarrel extends Block {
 	@Override
 	public boolean isFullCube(IBlockState state) {
 		return false;
+	}
+
+	@Override
+	public ItemHazardModule getModule() {
+		return module;
 	}
 
 	@Override

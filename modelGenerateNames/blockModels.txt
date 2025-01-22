@@ -20,3 +20,5 @@ minmus_stone
 minmus_smooth
 impact_dirt
 burning_earth
+vinyl_tile_large
+vinyl_tile_small
