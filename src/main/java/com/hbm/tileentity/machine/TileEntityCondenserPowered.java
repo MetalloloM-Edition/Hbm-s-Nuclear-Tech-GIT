@@ -20,7 +20,7 @@ import net.minecraftforge.fluids.FluidTank;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.AxisAlignedBB;
 
-public class TileEntityCondenserPowered extends TileEntityCondenser implements IEnergyReceiverMK2, ILoadedTile {
+public class TileEntityCondenserPowered extends TileEntityCondenser implements IEnergyReceiverMK2, IConfigurableMachine {
 	
 	public long power;
 	public float spin;
@@ -101,22 +101,6 @@ public class TileEntityCondenserPowered extends TileEntityCondenser implements I
 				}
 			}
 		}
-	}
-
-	@Override
-	public void packExtra(NBTTagCompound data) {
-		data.setLong("power", power);
-	}
-	
-	@Override
-	public boolean extraCondition(int convert) {
-		return power >= convert * 10;
-	}
-
-	@Override
-	public void postConvert(int convert) {
-		this.power -= convert * powerConsumption;
-		if(this.power < 0) this.power = 0;
 	}
 
 	@Override

@@ -1,51 +1,60 @@
 package com.hbm.tileentity.machine.storage;
 
 import com.hbm.lib.HBMSoundHandler;
-import com.hbm.tileentity.IGUIProvider;
+import com.hbm.lib.ItemStackHandlerWrapper;
 import com.hbm.tileentity.machine.TileEntityLockableBase;
-
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
-public abstract class TileEntityCrateBase extends TileEntityLockableBase implements ISidedInventory, IGUIProvider {
+// заметка для металлолома: ISidedInventory устарел к хуям, такое не юзаем
+public abstract class TileEntityCrateBase extends TileEntityLockableBase {
 
-	protected ItemStack slots[];
+	// этот рофлан с инвентарём я свистнул с TileEntityMachineBase, потому что зачем думать, если можно не думать?
+	public ItemStackHandler inventory;
 	public String customName;
 
-	public TileEntityCrateBase(int count) {
-		slots = new ItemStack[count];
+	public TileEntityCrateBase(int scount) {
+		this(scount, 64);
 	}
 
-	@Override
-	public int getSizeInventory() {
-		return slots.length;
+	public TileEntityCrateBase(int scount, int slotlimit) {
+		inventory = getNewInventory(scount, slotlimit);
 	}
 
-	@Override
-	public ItemStack getStackInSlot(int i) {
-		return slots[i];
+	public ItemStackHandler getNewInventory(int scount, int slotlimit){
+		return new ItemStackHandler(scount){
+			@Override
+			protected void onContentsChanged(int slot) {
+				super.onContentsChanged(slot);
+				markDirty();
+			}
+
+			@Override
+			public int getSlotLimit(int slot) {
+				return slotlimit;
+			}
+		};
 	}
 
-
+	/* гайд пошёл дальше. slots[i] => inventory.getStackInSlot(i)
+	 * ItemStack сделали так что теперь он null больше не может быть, так что
+	 * теперь у нас есть ItemStack.EMPTY
+	 * проверка на пустой слот - ".isEmpty()" вместо "== null"
+	 * ну и приравнять слот к чему-либо мы не можем напрямую, но можем прописать setStackInSlot
+	 */
 	public ItemStack getStackInSlotOnClosing(int i) {
-		if (slots[i] != null) {
-			ItemStack itemStack = slots[i];
-			slots[i] = null;
+		if (!inventory.getStackInSlot(i).isEmpty()) {
+			ItemStack itemStack = inventory.getStackInSlot(i);
+			inventory.setStackInSlot(i, ItemStack.EMPTY);
 			return itemStack;
 		} else {
 			return null;
-		}
-	}
-
-	@Override
-	public void setInventorySlotContents(int i, ItemStack itemStack) {
-		slots[i] = itemStack;
-		if (itemStack != null && itemStack.getCount() > getInventoryStackLimit()) {
-			itemStack.setCount(getInventoryStackLimit());
 		}
 	}
 
@@ -58,11 +67,6 @@ public abstract class TileEntityCrateBase extends TileEntityLockableBase impleme
 		this.customName = name;
 	}
 
-	@Override
-	public int getInventoryStackLimit() {
-		return 64;
-	}
-
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		if (world.getTileEntity(pos) != this) {
 			return false;
@@ -72,69 +76,75 @@ public abstract class TileEntityCrateBase extends TileEntityLockableBase impleme
 	}
 
 
-	public void openInventory() {
-		this.world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), HBMSoundHandler.crateOpen, SoundCategory.BLOCKS, 1.0F, 1.0F);
+	public static void openInventory(EntityPlayer player) {
+		player.world.playSound(player.posX, player.posY, player.posZ, HBMSoundHandler.crateOpen, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
 	}
 
 
-	public void closeInventory() {
-		this.world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), HBMSoundHandler.crateClose, SoundCategory.BLOCKS, 1.0F, 1.0F);
+	public static void closeInventory(EntityPlayer player) {
+		player.world.playSound(player.posX, player.posY, player.posZ, HBMSoundHandler.crateClose, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
 	}
 
-	@Override
+
 	public boolean isItemValidForSlot(int i, ItemStack stack) {
 		return true;
 	}
 
 	@Override
-	public ItemStack decrStackSize(int i, int j) {
-		if (slots[i] != null) {
-			if (slots[i].getCount() <= j) {
-				ItemStack itemStack = slots[i];
-				slots[i] = null;
-				return itemStack;
-			}
-			ItemStack itemStack1 = slots[i].splitStack(j);
-			if (slots[i].getCount() == 0) {
-				slots[i] = null;
-			}
-
-			return itemStack1;
-		} else {
-			return null;
-		}
-	}
-
-	@Override
 	public void readFromNBT(NBTTagCompound compound) {
-		lock = compound.getInteger("lock");
-		isLocked = compound.getBoolean("isLocked");
-		lockMod = compound.getDouble("lockMod");
+		if(compound.hasKey("inventory"))
+			inventory.deserializeNBT(compound.getCompoundTag("inventory"));
 		super.readFromNBT(compound);
 	}
 
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-		compound.setInteger("lock", lock);
-		compound.setBoolean("isLocked", isLocked);
-		compound.setDouble("lockMod", lockMod);
+		compound.setTag("inventory", inventory.serializeNBT());
 		return super.writeToNBT(compound);
 	}
 
 
-	public int[] getAccessibleSlotsFromSide(int side) {
-		int[] slots = new int[this.slots.length];
+	public int[] getAccessibleSlotsFromSide(EnumFacing e) {
+		int[] slots = new int[this.inventory.getSlots()];
 		for(int i = 0; i < slots.length; i++) slots[i] = i;
 		return slots;
 	}
 
+	public boolean canInsertItem(int slot, ItemStack itemStack, int amount) {
+		return this.isItemValidForSlot(slot, itemStack);
+	}
 
-	public boolean canInsertItem(int i, ItemStack itemStack, int j) {
-		return this.isItemValidForSlot(i, itemStack) && !this.isLocked();
+	public boolean canExtractItem(int slot, ItemStack itemStack, int amount) {
+		return true;
 	}
 
 
-	public boolean canExtractItem(int i, ItemStack itemStack, int j) {
-		return !this.isLocked();
+	@Override
+	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+		if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && inventory != null){
+			if(facing == null)
+				return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(inventory);
+			return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(new ItemStackHandlerWrapper(inventory, getAccessibleSlotsFromSide(facing)){
+				@Override
+				public ItemStack extractItem(int slot, int amount, boolean simulate) {
+					if(canExtractItem(slot, inventory.getStackInSlot(slot), amount))
+						return super.extractItem(slot, amount, simulate);
+					return ItemStack.EMPTY;
+				}
+
+				@Override
+				public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+					if(canInsertItem(slot, stack, stack.getCount()))
+						return super.insertItem(slot, stack, simulate);
+					return stack;
+				}
+			});
+		}
+		return super.getCapability(capability, facing);
+	}
+
+	@Override
+	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+		return (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && inventory != null) || super.hasCapability(capability, facing);
 	}
 }

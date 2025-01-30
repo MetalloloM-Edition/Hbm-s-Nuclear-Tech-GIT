@@ -5,3 +5,4 @@ launch_pad_large
 watz
 condenser_powered
 Industrial_boiler
+turret_sentry

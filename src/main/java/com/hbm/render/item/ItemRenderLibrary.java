@@ -1613,6 +1613,51 @@ public class ItemRenderLibrary {
 				bindTexture(ResourceManager.turret_fritz_tex); ResourceManager.turret_fritz.renderPart("Gun");
 				GlStateManager.shadeModel(GL11.GL_FLAT);
 			}});
+
+		renderers.put(Item.getItemFromBlock(ModBlocks.turret_sentry), new ItemRenderBase( ) {
+			public void renderInventory() {
+				GL11.glTranslated(-3, -4, 0);
+				GL11.glScaled(3.5, 3.5, 3.5);
+			}
+			public void renderCommon() {
+				GL11.glRotated(-90, 0, 1, 0);
+				GL11.glScaled(0.5, 0.5, 0.5);
+				GL11.glShadeModel(GL11.GL_SMOOTH);
+				bindTexture(ResourceManager.turret_sentry_tex);
+				ResourceManager.turret_sentry.renderPart("Base");
+				ResourceManager.turret_sentry.renderPart("Pivot");
+				ResourceManager.turret_sentry.renderPart("Body");
+				ResourceManager.turret_sentry.renderPart("Drum");
+				GL11.glTranslated(0, 3, 0);
+				GL11.glRotated(45, 1, 0, 0);
+				GL11.glTranslated(0, -3, 0);
+				ResourceManager.turret_sentry.renderPart("BarrelL");
+				ResourceManager.turret_sentry.renderPart("BarrelR");
+				GL11.glShadeModel(GL11.GL_FLAT);
+			}});
+
+		renderers.put(Item.getItemFromBlock(ModBlocks.turret_sentry_damaged), new ItemRenderBase( ) {
+			public void renderInventory() {
+				GL11.glTranslated(-3, -4, 0);
+				GL11.glScaled(3.5, 3.5, 3.5);
+			}
+			public void renderCommon() {
+				GL11.glRotated(-90, 0, 1, 0);
+				GL11.glScaled(0.5, 0.5, 0.5);
+				GL11.glShadeModel(GL11.GL_SMOOTH);
+				bindTexture(ResourceManager.turret_sentry_damaged_tex);
+				ResourceManager.turret_sentry.renderPart("Base");
+				ResourceManager.turret_sentry.renderPart("Pivot");
+				ResourceManager.turret_sentry.renderPart("Body");
+				ResourceManager.turret_sentry.renderPart("Drum");
+				GL11.glTranslated(0, 3, 0);
+				GL11.glRotated(45, 1, 0, 0);
+				GL11.glTranslated(0, -3, 0);
+				ResourceManager.turret_sentry.renderPart("BarrelL");
+				ResourceManager.turret_sentry.renderPart("BarrelR");
+				GL11.glShadeModel(GL11.GL_FLAT);
+			}});
+
 		renderers.put(Item.getItemFromBlock(ModBlocks.railgun_plasma), new ItemRenderBase() {
 			public void renderInventory() {
 				GL11.glTranslated(0, 2, -4);

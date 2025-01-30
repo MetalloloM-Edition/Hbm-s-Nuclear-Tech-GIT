@@ -62,7 +62,7 @@ public class MachineCrystallizer extends BlockDummyable {
 
 	@Override
 	public int[] getDimensions() {
-		return new int[] { 6, 0, 1, 1, 1, 1 };
+		return new int[] { 5, 0, 1, 1, 1, 1 };
 	}
 	
 	@Override
